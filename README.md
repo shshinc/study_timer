@@ -1,6 +1,11 @@
 # study_timer 공부해보자구
 ### 설치방법
-TBD
+ - opencv 설치방법
+
+터미널 창에서 아래와 같이 입력합니다.
+ ```
+ pip install opencv-python
+ ```
 ### 의존성
  - python 3
 ### 기능
