@@ -26,27 +26,27 @@ def selenium_scroll_option():
 
 chrome_options = webdriver.ChromeOptions()
 base_url = "https://www.google.co.kr/imghp?hl=ko"
-word = "pen"
+words = ["pen", "face", "hand", "iphone", "book"]
+for word in words:
+    driver = webdriver.Chrome(ChromeDriverManager().install())
+    driver.get(base_url)
+    browser = driver.find_element(By.NAME, "q")
+    browser.send_keys(word)
+    browser.send_keys(Keys.RETURN)
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
-driver.get(base_url)
-browser = driver.find_element(By.NAME, "q")
-browser.send_keys(word)
-browser.send_keys(Keys.RETURN)
+    selenium_scroll_option()
 
-selenium_scroll_option()
-
-images = driver.find_elements(By.CSS_SELECTOR, ".rg_i.Q4LuWd")
-count = 1
-cnt = 1
-for i in images:
-    i.click()
-    time.sleep(2)
-    if cnt % 25 == 0:
+    images = driver.find_elements(By.CSS_SELECTOR, ".rg_i.Q4LuWd")
+    count = 1
+    cnt = 1
+    for i in images:
+        i.click()
+        time.sleep(2)
+        if cnt % 25 == 0:
+            cnt += 1
+        imgurl = driver.find_element(By.XPATH, '//*[@id="islrg"]/div[1]/div[' + str(cnt) + ']/a[1]/div[1]/img').get_attribute("src")
+        path = "C:\\Users\\ksk03\\PycharmProjects\\study_timer\\" + word + "\\"
+        urllib.request.urlretrieve(imgurl, path + word + str(count) + ".jpg")
+        count += 1
         cnt += 1
-    imgurl = driver.find_element(By.XPATH, '//*[@id="islrg"]/div[1]/div[' + str(cnt) + ']/a[1]/div[1]/img').get_attribute("src")
-    path = "C:\\Users\\ksk03\\PycharmProjects\\study_timer\\" + word + "\\"
-    urllib.request.urlretrieve(imgurl, path + word + str(count) + ".jpg")
-    count += 1
-    cnt += 1
-driver.close()
+    driver.close()
