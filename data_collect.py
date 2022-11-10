@@ -42,6 +42,8 @@ count = 1
 for i in images:
     i.click()
     time.sleep(2)
-
-
+    imgurl = driver.find_element(By.XPATH, '//*[@id="islrg"]/div[1]/div[' + str(count) + ']/a[1]/div[1]/img').get_attribute("src")
+    path = "C:\\Users\\ksk03\\PycharmProjects\\study_timer\\" + word + "\\"
+    urllib.request.urlretrieve(imgurl, path + word + str(count) + ".jpg")
+    count += 1
 driver.close()
