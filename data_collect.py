@@ -35,3 +35,13 @@ browser.send_keys(word)
 browser.send_keys(Keys.RETURN)
 
 selenium_scroll_option()
+
+images = driver.find_elements(By.CSS_SELECTOR, ".rg_i.Q4LuWd")
+count = 1
+
+for i in images:
+    i.click()
+    time.sleep(2)
+
+
+driver.close()
