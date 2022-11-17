@@ -11,6 +11,12 @@
 	background-color: #333;
 }
 
+.wrapper{
+	display: grid;
+	grid-template-columns: 5fr 5fr;
+	margin-bottom: -160px;
+ }
+ 
 .graph{
 	display: inline-block;
 	margin-left: 50px;
@@ -22,3 +28,8 @@
  
  }
  
+.wrapper2{
+	display: grid;
+	grid-template-columns: 2.5fr 2.5fr 5fr;
+	margin-top: 0px;
+ }
