@@ -11,3 +11,14 @@
 	background-color: #333;
 }
 
+.graph{
+	display: inline-block;
+	margin-left: 50px;
+ }
+ 
+.doughnut{
+	display: block;
+	margin-bottom: 100px;
+ 
+ }
+ 
