@@ -25,6 +25,12 @@ function stopClock() {
     }
 }
 
+// 시계 초기화
+function resetClock() {
+    stopClock()
+    stopwatch.innerText = "00:00:00";
+    time = 0;
+}
 
 // 시간(int)을 시, 분, 초 문자열로 변환
 function getTimeFormatString() {
