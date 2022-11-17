@@ -1,0 +1,12 @@
+#container {
+	margin: 2% auto;
+    margin-left: 2%;
+	width: 700px;
+	height: 525px;
+	border: 0px #333 solid;
+}
+#videoElement {
+	width: 700px;
+	height: 525px;
+	background-color: #333;
+}
