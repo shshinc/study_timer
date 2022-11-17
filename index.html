@@ -90,6 +90,55 @@
         var myDoughnutChart = new Chart(ctx, config);
     </script>
 
+    
+    <div style="width: 300px; height: 300px;padding-top:10px;display: inline-block;">
+        <!--차트가 그려질 부분-->
+        <canvas id="week_goal"></canvas>
+    </div>
+    <script>
+        var ctx = document.getElementById('week_goal');
+        var config = {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                    data: [
+                        50,50
+                    ],
+                    backgroundColor: [
+                        "orange",
+                        "white"
+                    ],
+                    borderColor: [
+                            //경계선 색상
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                    borderWidth: 1, //경계선 굵기
+                    label: 'Dataset 1'
+                    }],
+                    labels: [
+                    '주간 공부양',
+                    '남은 목표양'
+                    ]
+                },
+                options: {
+                    responsive: false,
+                    legend: {
+                    position: 'top',
+                    },
+                    title: {
+                    display:true,
+                    text: '주간 목표'
+                    },
+                    animation: {
+                    animateScale: true,
+                    animateRotate: true
+                    }
+                }
+            };
+        var myDoughnutChart = new Chart(ctx, config);
+    </script>
+    
     <div style="margin: 2%; margin-top: 0;display: inline-block;">
         <span>목표시간</span>
         <select style="margin-left: 10px;"name="시간" onchange="handleOnChange(this)">
