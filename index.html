@@ -138,7 +138,67 @@
             };
         var myDoughnutChart = new Chart(ctx, config);
     </script>
+
     
+    <div style="width: 600px; height: 300px;">
+        <!--차트가 그려질 부분-->
+        <canvas id="week_study"></canvas>
+    </div>
+    <script type="text/javascript">
+        var context = document
+            .getElementById('week_study')
+            .getContext('2d');
+        var myChart = new Chart(context, {
+            type: 'bar', // 차트의 형태
+            data: { // 차트에 들어갈 데이터
+                labels: [
+                    //x 축
+                    '월','화','수','목','금','토','일'
+                ],
+                datasets: [
+                    { //데이터
+                        label: '이번주 총 공부량', //차트 제목
+                        fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                        data: [
+                            21,19,25,20,23,26,25 //x축 label에 대응되는 데이터 값
+                        ],
+                        backgroundColor: [
+                            //색상
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            //경계선 색상
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1 //경계선 굵기
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    yAxes: [
+                        {
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }
+                    ]
+                }
+            }
+        });
+    </script>
     <div style="margin: 2%; margin-top: 0;display: inline-block;">
         <span>목표시간</span>
         <select style="margin-left: 10px;"name="시간" onchange="handleOnChange(this)">
