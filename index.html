@@ -36,12 +36,23 @@
             <button onclick="startClock()">start</button>
             <button onclick="stopClock()">stop</button>
             <button onclick="resetClock()">reset</button>
-
         </div>
     </div>
     <script src="main.js"></script>
 
-   
+    <div style="margin: 2%; margin-top: 0;display: inline-block;">
+        <span>목표시간</span>
+        <select style="margin-left: 10px;"name="시간" onchange="handleOnChange(this)">
+            <option value="01:00:00">1시간</option>
+            <option value="02:00:00">2시간</option>
+            <option value="03:00:00">3시간</option>
+            <option value="04:00:00">4시간</option>
+            <option value="05:00:00">5시간</option>
+            <option value="06:00:00">6시간</option>
+        </select>
+        <h1 id='result'></h1>
+    </div>
+    <script src="main.js"></script>
 
 </body>
 </html>

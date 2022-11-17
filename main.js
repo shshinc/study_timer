@@ -41,3 +41,12 @@ function getTimeFormatString() {
     return String(hour).padStart(2, '0') + ":" + String(min).padStart(2, '0') + ":" + String(sec).padStart(2, '0');
 }
 
+//2. 목표시간 설정
+function handleOnChange(e) {
+    // 선택된 데이터 가져오기
+    const value = e.value;
+    
+    // 데이터 출력
+    document.getElementById('result').innerText
+      = value;
+  }
