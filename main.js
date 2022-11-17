@@ -18,6 +18,12 @@ function startClock() {
     timerId = setTimeout(startClock, 1000);
 }
 
+//시계 중지
+function stopClock() {
+    if (timerId != null) {
+        clearTimeout(timerId);
+    }
+}
 
 
 // 시간(int)을 시, 분, 초 문자열로 변환
