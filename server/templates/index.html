@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Study</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+    <div id="container">
+        <video autoplay="true" id="videoElement">
+        </video>
+    </div>
+    <script>
+        var video = document.querySelector("#videoElement");
+
+        if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+            video.srcObject = stream;
+            })
+            .catch(function (err0r) {
+            console.log("Something went wrong!");
+            });
+        }
+    </script>
+
+    <div style="margin: 2%; margin-top: 0; margin-right:10%;float: left;">
+        <p style="margin-top:0">공부시간</p>
+        <h1 id="stopwatch" >
+            00:00:00
+        </h1>
+        <div>
+            <button onclick="startClock()">start</button>
+            <button onclick="stopClock()">stop</button>
+            <button onclick="resetClock()">reset</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+
+    <div style="margin: 2%; margin-top: 0;display: inline-block;">
+        <span>목표시간</span>
+        <select style="margin-left: 10px;"name="시간" onchange="handleOnChange(this)">
+            <option value="01:00:00">1시간</option>
+            <option value="02:00:00">2시간</option>
+            <option value="03:00:00">3시간</option>
+            <option value="04:00:00">4시간</option>
+            <option value="05:00:00">5시간</option>
+            <option value="06:00:00">6시간</option>
+        </select>
+        <h1 id='result'></h1>
+    </div>
+    <script src="main.js"></script>
+
+
+</body>
+</html>
