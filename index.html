@@ -27,13 +27,14 @@
     </script>
 <div class="graph">
     <div class="doughnut">
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js">
+     Chart.defaults.global.defaultFontFamily = 'Noto Sans KR', sans-serif;</script>
      <div style="width: 300px; height: 300px;padding-top:10px;float: left;">
          <!--차트가 그려질 부분-->
          <canvas id="today_goal"></canvas>
      </div>
      <script>
+
          var ctx = document.getElementById('today_goal');
          var config = {
                type: 'doughnut',
@@ -195,9 +196,9 @@
             00:00:00
         </h1>
         <div>
-            <button class="myButton" onclick="startClock()">start</button>
-            <button class="myButton"  onclick="stopClock()">stop</button>
-            <button class="myButton"  onclick="resetClock()">reset</button>
+            <button class="myButton" onclick="startClock()">시작</button>
+            <button class="myButton"  onclick="stopClock()">정지</button>
+            <button class="myButton"  onclick="resetClock()">재설정</button>
         </div>
     </div>
     <script src="main.js"></script>

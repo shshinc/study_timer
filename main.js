@@ -50,3 +50,6 @@ function handleOnChange(e) {
     document.getElementById('result').innerText
       = value;
   }
+
+//chart.js 폰트변경
+Chart.defaults.global.defaultFontFamily = 'Noto Sans KR', 'sans-serif';

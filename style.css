@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+  }
+
 #container {
 	margin: 2% auto;
     margin-left: 2%;
 	width: 700px;
-	height: 500px;
-	border: 0px #333 solid;
+	height: 524px;
 }
 #videoElement {
 	width: 700px;
-	height: 500px;
+	height: 525px;
 	background-color: #333;
 }
 
@@ -57,4 +62,3 @@
 	top:1px;
 }
 
-        
