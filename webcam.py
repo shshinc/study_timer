@@ -36,4 +36,9 @@ while True:
                 # Object detected
                 center_x = int(detection[0] * w)
                 center_y = int(detection[1] * h)
+                dw = int(detection[2] * w)
+                dh = int(detection[3] * h)
+                # Rectangle coordinate
+                x = int(center_x - dw / 2)
+                y = int(center_y - dh / 2)
     indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.45, 0.4)
