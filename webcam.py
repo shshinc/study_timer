@@ -22,3 +22,7 @@ while True:
                                  True, crop=False)
     YOLO_net.setInput(blob)
     outs = YOLO_net.forward(output_layers)
+    
+    class_ids = []
+    confidences = []
+    boxes = []
