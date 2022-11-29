@@ -6,12 +6,13 @@ model = models.vgg16(pretrained=True)
 torch.save(model.state_dict(), 'best.pt')
 model = models.vgg16()
 model.load_state_dict(torch.load('best.pt'))
-torch.save(model.state_dict(), 'best.pt')
-model = models.vgg16()
-model.load_state_dict(torch.load('best.pt'))
+model.eval()
+torch.save(model, 'model.weights')
+model = torch.load('model.weights')
+
 VideoSignal = cv2.VideoCapture(0)
 # YOLO 가중치 파일과 CFG 파일 로드
-YOLO_net = cv2.dnn.readNet("yolov3.weights", "yolov3.cfg")
+YOLO_net = cv2.dnn.readNet(model)
 
 # YOLO NETWORK 재구성
 classes = []
