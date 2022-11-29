@@ -12,9 +12,7 @@ with open("yolo.names", "r") as f:
 layer_names = YOLO_net.getLayerNames()
 output_layers = [layer_names[i[0] - 1] for i in YOLO_net.getUnconnectedOutLayers()]
 start = time.time()
-if not webcam.isOpened():
-    print("Could not open webcam")
-    exit()
+
 
 while webcam.isOpened():
     status, frame = webcam.read()
