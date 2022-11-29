@@ -13,3 +13,7 @@ layer_names = YOLO_net.getLayerNames()
 output_layers = [layer_names[i[0] - 1] for i in YOLO_net.getUnconnectedOutLayers()]
 start = time.time()
 
+while True:
+    # 웹캠 프레임
+    ret, frame = VideoSignal.read()
+    h, w, c = frame.shape
