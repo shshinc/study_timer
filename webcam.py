@@ -29,4 +29,7 @@ while True:
     
     for out in outs:
         for detection in out:
-            indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.45, 0.4)
+            scores = detection[5:]
+            class_id = np.argmax(scores)
+            confidence = scores[class_id]
+    indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.45, 0.4)
