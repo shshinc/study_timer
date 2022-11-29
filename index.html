@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Study</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+    <div id="container" style="float: left;">
+        <video autoplay="true" id="videoElement">
+        </video>
+    </div>
+    <script>
+        var video = document.querySelector("#videoElement");
+
+        if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+            video.srcObject = stream;
+            })
+            .catch(function (err0r) {
+            console.log("Something went wrong!");
+            });
+        }
+    </script>
+<div class="graph">
+    <div class="doughnut">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js">
+     Chart.defaults.global.defaultFontFamily = 'Noto Sans KR', sans-serif;</script>
+     <div style="width: 300px; height: 300px;padding-top:10px;float: left;">
+         <!--차트가 그려질 부분-->
+         <canvas id="today_goal"></canvas>
+     </div>
+     <script>
+
+         var ctx = document.getElementById('today_goal');
+         var config = {
+               type: 'doughnut',
+               data: {
+                  datasets: [{
+                     data: [
+                        50,50
+                     ],
+                     backgroundColor: [
+                        "orange",
+                        "white"
+                     ],
+                     borderColor: [
+                             //경계선 색상
+                             'rgba(255, 159, 64, 1)',
+                             'rgba(255, 159, 64, 1)'
+                         ],
+                     borderWidth: 1, //경계선 굵기
+                     label: 'Dataset 1'
+                  }],
+                  labels: [
+                     '오늘 공부양',
+                     '남은 목표양'
+                  ]
+               },
+               options: {
+                  responsive: false,
+                  legend: {
+                     position: 'top',
+                  },
+                  title: {
+                     display:true,
+                     text: '오늘의 목표'
+                  },
+                  animation: {
+                     animateScale: true,
+                     animateRotate: true
+                  }
+               }
+            };
+         var myDoughnutChart = new Chart(ctx, config);
+     </script>
+
+    <div style="width: 300px; height: 300px;padding-top:10px;display: inline-block;">
+        <!--차트가 그려질 부분-->
+        <canvas id="week_goal"></canvas>
+    </div>
+    <script>
+        var ctx = document.getElementById('week_goal');
+        var config = {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                    data: [
+                        50,50
+                    ],
+                    backgroundColor: [
+                        "orange",
+                        "white"
+                    ],
+                    borderColor: [
+                            //경계선 색상
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                    borderWidth: 1, //경계선 굵기
+                    label: 'Dataset 1'
+                    }],
+                    labels: [
+                    '주간 공부양',
+                    '남은 목표양'
+                    ]
+                },
+                options: {
+                    responsive: false,
+                    legend: {
+                    position: 'top',
+                    },
+                    title: {
+                    display:true,
+                    text: '주간 목표'
+                    },
+                    animation: {
+                    animateScale: true,
+                    animateRotate: true
+                    }
+                }
+            };
+        var myDoughnutChart = new Chart(ctx, config);
+    </script>
+    </div>
+        <div style="width: 600px; height: 300px; ">
+            <!--차트가 그려질 부분-->
+            <canvas id="week_study"></canvas>
+        </div>
+        <script type="text/javascript">
+            var context = document
+                .getElementById('week_study')
+                .getContext('2d');
+            var myChart = new Chart(context, {
+                type: 'bar', // 차트의 형태
+                data: { // 차트에 들어갈 데이터
+                    labels: [
+                        //x 축
+                        '월','화','수','목','금','토','일'
+                    ],
+                    datasets: [
+                        { //데이터
+                            label: '이번주 총 공부량', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                21,19,25,20,23,26,25 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                //경계선 색상
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1 //경계선 굵기
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [
+                            {
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }
+                        ]
+                    }
+                }
+            });
+        </script>
+        </div>
+    </div>
+</div>
+
+<div class="wapper3">
+    <div style="margin: 2%; margin-top: 0; margin-right:10%;float: left;">
+        <p style="margin-top:0">공부시간</p>
+        <h1 id="stopwatch" >
+            00:00:00
+        </h1>
+        <div>
+            <button class="myButton" onclick="startClock()">시작</button>
+            <button class="myButton"  onclick="stopClock()">정지</button>
+            <button class="myButton"  onclick="resetClock()">재설정</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+
+    <div style="margin: 2%; margin-top: 0;float: left;">
+        <span>목표시간</span>
+        <select style="margin-left: 10px;"name="시간" onchange="handleOnChange(this)">
+            <option value="01:00:00">1시간</option>
+            <option value="02:00:00">2시간</option>
+            <option value="03:00:00">3시간</option>
+            <option value="04:00:00">4시간</option>
+            <option value="05:00:00">5시간</option>
+            <option value="06:00:00">6시간</option>
+        </select>
+        <h1 id='result'></h1>
+    </div>
+    <script src="main.js"></script>
+
+
+</div>
+</body>
+</html>
