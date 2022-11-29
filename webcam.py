@@ -13,15 +13,3 @@ layer_names = YOLO_net.getLayerNames()
 output_layers = [layer_names[i[0] - 1] for i in YOLO_net.getUnconnectedOutLayers()]
 start = time.time()
 
-
-while webcam.isOpened():
-    status, frame = webcam.read()
-
-    if status:
-        cv2.imshow("test", frame)
-
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-webcam.release()
-cv2.destroyAllWindows()
