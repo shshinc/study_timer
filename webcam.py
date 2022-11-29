@@ -1,5 +1,8 @@
 import cv2
 import numpy as np
+import torch
+import torchvision.models as models
+model = models.vgg16(pretrained=True)
 VideoSignal = cv2.VideoCapture(0)
 # YOLO 가중치 파일과 CFG 파일 로드
 YOLO_net = cv2.dnn.readNet("yolov3.weights", "yolov3.cfg")
