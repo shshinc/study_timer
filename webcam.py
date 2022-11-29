@@ -32,4 +32,8 @@ while True:
             scores = detection[5:]
             class_id = np.argmax(scores)
             confidence = scores[class_id]
+            if confidence > 0.5:
+                # Object detected
+                center_x = int(detection[0] * w)
+                center_y = int(detection[1] * h)
     indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.45, 0.4)
