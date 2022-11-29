@@ -26,3 +26,7 @@ while True:
     class_ids = []
     confidences = []
     boxes = []
+    
+    for out in outs:
+        for detection in out:
+            indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.45, 0.4)
