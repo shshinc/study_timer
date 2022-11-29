@@ -8,7 +8,10 @@ YOLO_net = cv2.dnn.readNet("yolov3.weights", "yolov3.cfg")
 classes = []
 with open("yolo.names", "r") as f:
     classes = [line.strip() for line in f.readlines()]
-    
+
+layer_names = YOLO_net.getLayerNames()
+output_layers = [layer_names[i[0] - 1] for i in YOLO_net.getUnconnectedOutLayers()]
+start = time.time()
 if not webcam.isOpened():
     print("Could not open webcam")
     exit()
