@@ -11,7 +11,7 @@ with open("yolo.names", "r") as f:
 
 layer_names = YOLO_net.getLayerNames()
 output_layers = [layer_names[i[0] - 1] for i in YOLO_net.getUnconnectedOutLayers()]
-start = time.time()
+
 
 while True:
     # 웹캠 프레임
@@ -53,3 +53,8 @@ while True:
             x, y, w, h = boxes[i]
             label = str(classes[class_ids[i]])
             score = confidences[i]
+
+            # 경계상자와 클래스 정보 이미지에 입력
+            cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 5)
+            cv2.putText(frame, label, (x, y - 20), cv2.FONT_ITALIC, 0.5,
+                        (255, 255, 255), 1)
