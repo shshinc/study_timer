@@ -58,3 +58,7 @@ while True:
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 5)
             cv2.putText(frame, label, (x, y - 20), cv2.FONT_ITALIC, 0.5,
                         (255, 255, 255), 1)
+
+    cv2.imshow("YOLOv3", frame)
+    if cv2.waitKey(100) > 0:
+        break
