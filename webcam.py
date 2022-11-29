@@ -17,3 +17,8 @@ while True:
     # 웹캠 프레임
     ret, frame = VideoSignal.read()
     h, w, c = frame.shape
+    # YOLO 입력
+    blob = cv2.dnn.blobFromImage(frame, 0.00392, (416, 416), (0, 0, 0),
+                                 True, crop=False)
+    YOLO_net.setInput(blob)
+    outs = YOLO_net.forward(output_layers)
