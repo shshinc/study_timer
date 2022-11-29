@@ -41,4 +41,7 @@ while True:
                 # Rectangle coordinate
                 x = int(center_x - dw / 2)
                 y = int(center_y - dh / 2)
+                boxes.append([x, y, dw, dh])
+                confidences.append(float(confidence))
+                class_ids.append(class_id)
     indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.45, 0.4)
