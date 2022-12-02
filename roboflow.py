@@ -26,6 +26,10 @@ upload_url = "".join([
 ])
 
 video = cv2.VideoCapture(0)
+def infer():
+    ret, img = video.read()
+
+    height, width, channels = img.shape
 
 while 1:
     if(cv2.waitKey(1) == ord('q')):
