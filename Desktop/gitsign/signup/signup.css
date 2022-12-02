@@ -8,6 +8,7 @@
 html {
     width: 400px;
     display: flex;
+    font-family: 'RobotoDraft', 'Roboto', sans-serif;
     justify-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -18,10 +19,16 @@ body {
     height: 100%;
     width: 1000px;
     font-size: 14px;
+    box-shadow: 1px 1px 2px 2px rgb(235, 235, 235);
+    background-color: rgba(255, 255, 255, 0.968);
+}
+
+div{
+    background-color: white;
 }
 
 input{
-    border: 1px;
+    border: 1px solid orange;
     border-radius: 3px;
     line-height: 35px;
     font-size: 12px;
@@ -41,6 +48,7 @@ div {
 
 .title {
     text-align: center;
+    color: orange;
 }
 
 .email input {
@@ -66,6 +74,7 @@ div {
 
 .signUp button {
     width: 100%;
+    background-color: orange;
     cursor:pointer;
     border: 0;
     outline: 0;
@@ -73,6 +82,7 @@ div {
 
 button{
     cursor: pointer;
+    color:white;
     height: 30px;
 }
 
