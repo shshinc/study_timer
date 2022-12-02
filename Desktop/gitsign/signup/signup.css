@@ -16,10 +16,9 @@ html {
 
 body {
     margin: 0 auto;
-    height: 100%;
-    width: 1000px;
+    width: 1500px;
     font-size: 14px;
-    box-shadow: 1px 1px 2px 2px rgb(235, 235, 235);
+    box-shadow: 1px 1px 3px 3px rgb(235, 235, 235);
     background-color: rgba(255, 255, 255, 0.968);
 }
 
@@ -28,7 +27,7 @@ div{
 }
 
 input{
-    border: 1px solid orange;
+    border: 1.3px solid rgb(56, 56, 56);
     border-radius: 3px;
     line-height: 35px;
     font-size: 12px;
