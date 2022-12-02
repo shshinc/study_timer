@@ -1,0 +1,7 @@
+{
+    "__comment1": "Obtain these values via Roboflow",
+    "ROBOFLOW_API_KEY": "OIpaEoYBqWcCpULTz970",
+    "ROBOFLOW_MODEL": "study-timer/2",
+    "ROBOFLOW_SIZE": 416,
+
+}
