@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>회원가입 페이지</title>
+
+    <link href="signup.css" rel="stylesheet" />
+    <script src="signup.js"></script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="title"><h1 style="font-size: 20px;">Sign up</h1></div>
+        <div class="email">
+            <input id="email" type="text" placeholder="이메일을 입력해 주세요.">
+            <div id="emailError" class="error"></div>
+        </div>
+        <div class="name">
+            <input id="name"  type="text" placeholder="이름을 입력해 주세요.">
+            <div id="nameError" class="error"></div>
+        </div>
+        <div class="password">
+            <input id="password" type="password" placeholder="비밀번호를 입력해 주세요.">
+            <div id="passwordError" class="error"></div>
+        </div>
+        <div class="passwordCheck">
+            <input id="passwordCheck" type="password" placeholder="비밀번호를 다시 입력해 주세요.">
+            <div id="passwordCheckError" class="error"></div>
+        </div>
+        <div class="purpose">
+            <select id="purpose">
+                <option selected disabled>공부 목적을 선택해주세요.</option>
+                <option>입시 공부</option>
+                <option>고시 공부</option>
+                <option>개인 공부</option>
+                <option>시험 공부</option>
+            </select>
+            <div id="purposeError" class="error"></div>
+        </div>
+        <div class="line">
+            <hr style="border: solid 0.1px white">
+        </div>
+        <div class="signUp">
+            <button id="signUpButton" onclick="signUpCheck()">Sign up!</button>
+        </div>
+    </div>
+
+</body>
+</html>

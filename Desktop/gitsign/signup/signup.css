@@ -1,0 +1,84 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-size: 11px;
+}
+
+
+html {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+body {
+    margin: 0 auto;
+    height: 100%;
+    width: 1000px;
+    font-size: 14px;
+}
+
+input{
+    border: 1px;
+    border-radius: 3px;
+    line-height: 35px;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.wrapper {
+    padding: 30px;
+}
+
+div {
+    padding-top: 3px;
+    padding-bottom: 8px;
+}
+
+.title {
+    text-align: center;
+}
+
+.email input {
+    width: 100%;
+}
+
+.name input {
+    width: 100%;
+}
+
+.password input {
+    width: 100%;
+}
+
+.passwordCheck input {
+    width: 100%;
+}
+
+.purpose select {
+    width: 100%;
+    height: 40px;
+}
+
+.signUp button {
+    width: 100%;
+    cursor:pointer;
+    border: 0;
+    outline: 0;
+}
+
+button{
+    cursor: pointer;
+    height: 30px;
+}
+
+.error{
+    font-size: 1px;
+    height: 20px;
+    color:red;
+    font-weight: 700;
+}
