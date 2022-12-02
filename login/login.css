@@ -19,7 +19,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 1px solid lightgrey;
+    border: 1px solid rgb(255, 155, 47);
     border-radius: 5px;
     text-align : center;
     
@@ -48,3 +48,13 @@ body{
     border-radius: 5px;
 }
 
+.signup{
+    padding-top: 10px;
+    font-size:14px;
+}
+a:link {
+    color: rgb(255, 77, 46); 
+} 
+a:hover {
+    color: rgb(255, 119, 0);
+}
