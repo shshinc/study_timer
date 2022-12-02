@@ -7,27 +7,24 @@
 
 html {
     width: 400px;
-    display: flex;
     justify-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 body {
-    margin: 0 auto;
-    width: 1500px;
-    font-size: 14px;
+    width: 500px;
     box-shadow: 1px 1px 3px 3px rgb(235, 235, 235);
     background-color: rgba(255, 255, 255, 0.968);
 }
 
 div{
+    justify-content: center;
     background-color: white;
 }
 
 input{
     border: 1.3px solid rgb(56, 56, 56);
-    border-radius: 3px;
     line-height: 35px;
     font-size: 12px;
     padding-left: 10px;
@@ -36,6 +33,7 @@ input{
 
 
 .wrapper {
+    margin: 0 auto;
     padding: 30px;
 }
 
@@ -50,22 +48,27 @@ div {
 }
 
 .email input {
+    margin-left:100%;
     width: 100%;
 }
 
 .name input {
+    margin-left:100%;
     width: 100%;
 }
 
 .password input {
+    margin-left:100%;
     width: 100%;
 }
 
 .passwordCheck input {
+    margin-left:100%;
     width: 100%;
 }
 
 .purpose select {
+    margin-left:100%;
     width: 100%;
     height: 40px;
 }
@@ -79,6 +82,7 @@ div {
 }
 
 button{
+    margin-left:100%;
     cursor: pointer;
     color:white;
     height: 40px;
