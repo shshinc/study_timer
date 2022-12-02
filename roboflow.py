@@ -24,3 +24,9 @@ upload_url = "".join([
     "&format=image",
     "&stroke=5"
 ])
+
+video = cv2.VideoCapture(0)
+
+
+video.release()
+cv2.destroyAllWindows()
