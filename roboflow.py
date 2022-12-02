@@ -39,6 +39,11 @@ def infer():
     resp = requests.post(upload_url, data=img_str, headers={
         "Content-Type": "application/x-www-form-urlencoded"
     }, stream=True).raw
+    
+    image = np.asarray(bytearray(resp.read()), dtype="uint8")
+    image = cv2.imdecode(image, cv2.IMREAD_COLOR)
+
+    return image
 
 while 1:
     if(cv2.waitKey(1) == ord('q')):
