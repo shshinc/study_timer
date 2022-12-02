@@ -27,6 +27,9 @@ upload_url = "".join([
 
 video = cv2.VideoCapture(0)
 
+while 1:
+    if(cv2.waitKey(1) == ord('q')):
+        break
 
 video.release()
 cv2.destroyAllWindows()
