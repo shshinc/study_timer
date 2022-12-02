@@ -35,6 +35,10 @@ def infer():
     
     retval, buffer = cv2.imencode('.jpg', img)
     img_str = base64.b64encode(buffer)
+    
+    resp = requests.post(upload_url, data=img_str, headers={
+        "Content-Type": "application/x-www-form-urlencoded"
+    }, stream=True).raw
 
 while 1:
     if(cv2.waitKey(1) == ord('q')):
