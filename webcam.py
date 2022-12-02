@@ -8,14 +8,14 @@ if len(physical_devices) > 0:
     tf.config.experimental.set_memory_growth(physical_devices[0], True)
 model = models.vgg16(pretrained=True)
 torch.save(model.state_dict(), 'best.pt')
-model.load_state_dict(torch.load('best.pt'))
+model.load_state_dict(torch.load('yolov3.weights'))
 model.eval()
 torch.save(model, 'yolov3.weights')
-
+model = torch.load('yolov3.weights')
 
 VideoSignal = cv2.VideoCapture(0)
 # YOLO 가중치 파일과 CFG 파일 로드
-YOLO_net = cv2.dnn.readNet(model)
+YOLO_net = cv2.dnn.readNet('yolov3.weights', 'yolov3.cfg')
 
 # YOLO NETWORK 재구성
 classes = []
