@@ -10,3 +10,7 @@ with open('model.json') as f:
     ROBOFLOW_API_KEY = config["ROBOFLOW_API_KEY"]
     ROBOFLOW_MODEL = config["ROBOFLOW_MODEL"]
     ROBOFLOW_SIZE = config["ROBOFLOW_SIZE"]
+    RAMERATE = config["FRAMERATE"]
+    BUFFER = config["BUFFER"]
+    COMMENT_1 = config["__comment1"]
+    COMMENT_2 = config["__comment2"]
