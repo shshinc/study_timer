@@ -30,6 +30,9 @@ video = cv2.VideoCapture(0)
 while 1:
     if(cv2.waitKey(1) == ord('q')):
         break
-
+    start = time.time()
+    image = infer()
+    cv2.imshow('image', image)
+    
 video.release()
 cv2.destroyAllWindows()
