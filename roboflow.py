@@ -29,7 +29,9 @@ video = cv2.VideoCapture(0)
 def infer():
     ret, img = video.read()
 
-    height, width, channels = img.shape
+    height, width, channels = img.shape()
+    scale = ROBOFLOW_SIZE / max(height, width)
+    img = cv2.resize(img, (round(scale * width), round(scale * height)))
 
 while 1:
     if(cv2.waitKey(1) == ord('q')):
