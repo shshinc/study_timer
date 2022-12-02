@@ -8,11 +8,10 @@ if len(physical_devices) > 0:
     tf.config.experimental.set_memory_growth(physical_devices[0], True)
 model = models.vgg16(pretrained=True)
 torch.save(model.state_dict(), 'best.pt')
-model = models.vgg16()
 model.load_state_dict(torch.load('best.pt'))
 model.eval()
-torch.save(model, 'model.weights')
-model = torch.load('model.weights')
+torch.save(model, 'yolov3.weights')
+
 
 VideoSignal = cv2.VideoCapture(0)
 # YOLO 가중치 파일과 CFG 파일 로드
