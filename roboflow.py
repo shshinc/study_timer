@@ -20,5 +20,7 @@ upload_url = "".join([
     "https://detect.roboflow.com/",
     ROBOFLOW_MODEL,
     "?api_key=",
-
+    ROBOFLOW_API_KEY,
+    "&format=image",
+    "&stroke=5"
 ])
