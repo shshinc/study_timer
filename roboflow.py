@@ -14,3 +14,11 @@ with open('model.json') as f:
     BUFFER = config["BUFFER"]
     COMMENT_1 = config["__comment1"]
     COMMENT_2 = config["__comment2"]
+    
+    
+upload_url = "".join([
+    "https://detect.roboflow.com/",
+    ROBOFLOW_MODEL,
+    "?api_key=",
+
+])
