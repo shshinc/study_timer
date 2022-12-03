@@ -41,6 +41,7 @@ output_layers = [layer_names[i[0] - 1] for i in YOLO_net.getUnconnectedOutLayers
 
 count = 0
 start_total = time.time()
+start_play = 0
 while True:
     # 웹캠 프레임
     ret, frame = VideoSignal.read()
@@ -86,6 +87,8 @@ while True:
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 5)
             cv2.putText(frame, label, (x, y - 20), cv2.FONT_ITALIC, 0.5,
                         (255, 255, 255), 1)
+            if label == 'cell phone':
+                start_play += 30
             
 
     cv2.imshow("YOLOv3", frame)
