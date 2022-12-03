@@ -18,7 +18,9 @@ model = torch.load('yolov3.weights')
 
 #캡처한 사진을 저장할 폴더 생성
 def createFolder(directory):
-    
+    try:
+        if not os.path.exists(directory):
+            os.path.makedirs(directory)
     
     
 createFolder("C:/Users/ksk03/PycharmProjects/sample/capture")
