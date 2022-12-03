@@ -24,7 +24,8 @@ def createFolder(directory):
     except OSError:
         print('Error: Creating directory.' + directory)
     
-createFolder("C:/Users/ksk03/PycharmProjects/sample/capture")
+folder_path = "C:/Users/ksk03/PycharmProjects/sample/capture"
+createFolder(folder_path)
 VideoSignal = cv2.VideoCapture(0)
 # YOLO 가중치 파일과 CFG 파일 로드
 YOLO_net = cv2.dnn.readNet('yolov3.weights', 'yolov3.cfg')
@@ -86,5 +87,7 @@ while True:
             
 
     cv2.imshow("YOLOv3", frame)
+    if cv2.waitKey(1):
+        cv2.imwrite(folder_path + '/capture.jpg', frame)
     if cv2.waitKey(100) > 0:
         break
