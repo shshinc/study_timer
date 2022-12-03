@@ -90,5 +90,5 @@ while True:
     if cv2.waitKey(30000):
         cv2.imwrite(folder_path + '/capture' + str(count) + '.jpg', frame)
         count += 1
-    if cv2.waitKey(100) > 0:
+    if cv2.waitKey() == ord('q'):
         break
