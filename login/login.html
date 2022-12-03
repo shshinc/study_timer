@@ -9,17 +9,24 @@
 </head>
 <body>
     <div class="main">
+        <script>function enterkey() {
+            if (window.event.keyCode == 13) {
+              document.getElementById("login").click();
+            }
+        }</script>
         <div class="login">
             <h1 class="logo">LOGIN</h1>
             <div class="login_id">
-                <input type="text" placeholder="아이디" id="id" class="account">
+                <input type="text" placeholder="아이디" id="id" class="account"onkeyup="enterkey()">
             </div>
+
             <div class="login_pw">
-                <input type="password" placeholder="비밀번호" id="password" class="account">
+                <input type="password" placeholder="비밀번호" id="password" class="account" onkeyup="enterkey()">
             </div>
             <div class="submit">
                     <button id="login" class="account">로그인</button>
             </div>
+            
             <div class="signup">
             <label id="signup">아직 계정이 없다면</label>
             <A id="signup" href="signup.html">회원가입</A>
