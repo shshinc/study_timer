@@ -19,11 +19,11 @@ body {
     width: 480px;
     box-shadow: 0 0 7px 1px  rgba(225, 225, 225, 0.788);
     border-radius: 45px;
-    background-color: rgba(255, 255, 255, 0.968);
+    background-color: rgba(255, 255, 255, 0.804);
 }
 
 input{
-    border: 0.5px solid rgb(56, 56, 56);
+    border: 0.5px solid rgba(56, 56, 56, 0.616);
     line-height: 35px;
     font-size: 12px;
     padding-left: 10px;
@@ -73,6 +73,7 @@ div {
     width: 100%;
     background-color: rgb(255, 155, 47);
     cursor:pointer;
+    border-radius: 45px;
     border: 0;
     outline: 0;
 }
