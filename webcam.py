@@ -4,6 +4,7 @@ import torch
 import torchvision.models as models
 import tensorflow as tf
 import os
+import time
 
 #모델 불러오기
 pysical_devices = tf.config.experimental.list_physical_devices('GPU')
@@ -39,6 +40,7 @@ layer_names = YOLO_net.getLayerNames()
 output_layers = [layer_names[i[0] - 1] for i in YOLO_net.getUnconnectedOutLayers()]
 
 count = 0
+start_total = time.time()
 while True:
     # 웹캠 프레임
     ret, frame = VideoSignal.read()
@@ -91,4 +93,7 @@ while True:
         cv2.imwrite(folder_path + '/capture' + str(count) + '.jpg', frame)
         count += 1
     if cv2.waitKey() == ord('q'):
+        end_total = time.time()
+        total_time = end_total - start_total
+        print(total_time)
         break
