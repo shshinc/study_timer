@@ -5,6 +5,7 @@ import torchvision.models as models
 import tensorflow as tf
 import os
 import time
+import datetime
 
 #모델 불러오기
 pysical_devices = tf.config.experimental.list_physical_devices('GPU')
@@ -95,8 +96,10 @@ while True:
     if cv2.waitKey(30000):
         cv2.imwrite(folder_path + '/capture' + str(count) + '.jpg', frame)
         count += 1
-    if cv2.waitKey() == ord('q'):
+    if cv2.waitKey(1) == ord('q'):
         end_total = time.time()
-        total_time = end_total - start_total
+        total_time = str(datetime.timedelta(seconds=end_total - start_total))
+        play_time = str(datetime.timedelta(seconds=start_play))
         print(total_time)
+        print(play_time)
         break
