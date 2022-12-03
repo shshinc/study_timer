@@ -38,7 +38,7 @@ with open("yolo.names", "r") as f:
 layer_names = YOLO_net.getLayerNames()
 output_layers = [layer_names[i[0] - 1] for i in YOLO_net.getUnconnectedOutLayers()]
 
-
+count = 0
 while True:
     # 웹캠 프레임
     ret, frame = VideoSignal.read()
@@ -87,7 +87,8 @@ while True:
             
 
     cv2.imshow("YOLOv3", frame)
-    if cv2.waitKey(1):
-        cv2.imwrite(folder_path + '/capture.jpg', frame)
+    if cv2.waitKey(30000):
+        cv2.imwrite(folder_path + '/capture' + str(count) + '.jpg', frame)
+        count += 1
     if cv2.waitKey(100) > 0:
         break
