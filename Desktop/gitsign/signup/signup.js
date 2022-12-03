@@ -17,8 +17,8 @@ function signUpCheck(){
       document.getElementById("emailError").innerHTML="이메일이 올바르지 않습니다."
       check = false
     }
-    else if(email.includes('.')){
-        let emailServ1 = email.split('.')[1]
+    if(emailServer.includes('.')){
+        let emailServ1 = emailServer.split('.')[1]
         if(emailServ1 !== "com" && emailServ1 !== "net" && emailServ1 !== "ac"){
             document.getElementById("emailError").innerHTML="이메일이 올바르지 않습니다."
             check = false
@@ -41,30 +41,27 @@ function signUpCheck(){
     document.getElementById("nameError").innerHTML=""
   }
 
-
-  // 비밀번호 확인
-  if(password !== passwordCheck){
-    document.getElementById("passwordError").innerHTML=""
-    document.getElementById("passwordCheckError").innerHTML="비밀번호가 동일하지 않습니다."
-    check = false
-  }else{
-    document.getElementById("passwordError").innerHTML=""
-    document.getElementById("passwordCheckError").innerHTML=""
-  }
-
   if(password===""){
     document.getElementById("passwordError").innerHTML="비밀번호를 입력해주세요."
     check = false
   }else{
     document.getElementById("passwordError").innerHTML=""
   }
+
   if(passwordCheck===""){
     document.getElementById("passwordCheckError").innerHTML="비밀번호를 다시 입력해주세요."
     check = false
   }else{
-    document.getElementById("passwordCheckError").innerHTML=""
+    if(password !== passwordCheck){
+      document.getElementById("passwordError").innerHTML=""
+      document.getElementById("passwordCheckError").innerHTML="비밀번호가 동일하지 않습니다."
+      check = false
+    }
+    else{
+      document.getElementById("passwordError").innerHTML=""
+      document.getElementById("passwordCheckError").innerHTML=""
+    }
   }
-
 
   // 지역선택 확인
   if(purpose === "공부 목적을 선택해주세요."){
