@@ -3,20 +3,15 @@
 
 <head>
     <title>회원가입 페이지</title>
+
     <link href="signup.css" rel="stylesheet" />
     <script src="signup.js"></script>
+
 </head>
 
-<style type="text/css" >
-    a:link{ font-size: 8px; color:rgb(255, 155, 47); text-decoration:none; }    /* 처음 방문링크 */
-    a:visited{ font-size: 8px; color:rgb(255, 155, 47);}    /* 방문한 링크 */
-    a:hover{ font-size:8px; color: rgb(255, 77, 46); } /* 마우스 오버시 */ 
-</style>
-
-<body style = "margin-left:625px; margin-top:130px;">
+<body>
     <div class="wrapper">
-        <div class="title"><h1 style="font-size: 34px; font-weight: bold;">SIGN UP</h1></div>
-        <div style = "padding: 19px;"></div>
+        <div class="title"><h1 style="font-size: 20px;">Sign up</h1></div>
         <div class="email">
             <input id="email" type="text" placeholder="이메일을 입력해 주세요.">
             <div id="emailError" class="error"></div>
@@ -38,20 +33,16 @@
                 <option selected disabled>공부 목적을 선택해주세요.</option>
                 <option>입시 공부</option>
                 <option>고시 공부</option>
-                <option>개인 공부</option>
-                <option>취업 공부</option>
                 <option>시험 공부</option>
             </select>
             <div id="purposeError" class="error"></div>
         </div>
-        <div style="padding: 10px;"></div>
-        <div class="signUp">
-            <button id="signUpButton" onclick="signUpCheck()">
-                <h1 style="font-size: 14px;">CLICK TO SIGN UP</h1></button>
+        <div class="line">
+            <hr style="border: solid 0.1px white">
         </div>
-        <div style="position:absolute; left:690px; top:697px; font-size: 8px; color: rgb(192, 192, 192);">ALREADY HAVE AN ACCOUNT?</div>
-        <div style="white-space:nowrap; position:absolute; left:850px; top:694px;"><a href="file:///C:/Users/miseo/Desktop/gitsign/signup/signup.html">CLICK HERE</a></div>
-        <div style = "padding: 6px;"></div>
+        <div class="signUp">
+            <button id="signUpButton" onclick="signUpCheck()">Sign up!</button>
+        </div>
     </div>
 
 </body>
