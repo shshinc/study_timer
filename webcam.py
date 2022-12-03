@@ -3,6 +3,9 @@ import numpy as np
 import torch
 import torchvision.models as models
 import tensorflow as tf
+import os
+
+#모델 불러오기
 pysical_devices = tf.config.experimental.list_physical_devices('GPU')
 if len(physical_devices) > 0:
     tf.config.experimental.set_memory_growth(physical_devices[0], True)
@@ -13,6 +16,12 @@ model.eval()
 torch.save(model, 'yolov3.weights')
 model = torch.load('yolov3.weights')
 
+#캡처한 사진을 저장할 폴더 생성
+def createFolder(directory):
+    
+    
+    
+createFolder("C:/Users/ksk03/PycharmProjects/sample/capture")
 VideoSignal = cv2.VideoCapture(0)
 # YOLO 가중치 파일과 CFG 파일 로드
 YOLO_net = cv2.dnn.readNet('yolov3.weights', 'yolov3.cfg')
@@ -71,6 +80,7 @@ while True:
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 5)
             cv2.putText(frame, label, (x, y - 20), cv2.FONT_ITALIC, 0.5,
                         (255, 255, 255), 1)
+            
 
     cv2.imshow("YOLOv3", frame)
     if cv2.waitKey(100) > 0:
