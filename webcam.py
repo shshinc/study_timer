@@ -20,8 +20,9 @@ model = torch.load('yolov3.weights')
 def createFolder(directory):
     try:
         if not os.path.exists(directory):
-            os.path.makedirs(directory)
-    
+            os.makedirs(directory)
+    except OSError:
+        print('Error: Creating directory.' + directory)
     
 createFolder("C:/Users/ksk03/PycharmProjects/sample/capture")
 VideoSignal = cv2.VideoCapture(0)
