@@ -1,37 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
+
 * {
     margin: 0px;
     box-sizing: border-box;
-    font-size: 11px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 12px;
 }
+
 
 html {
     width: 400px;
-    display: flex;
     justify-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 body {
-    margin: 0 auto;
-    height: 100%;
-    width: 1000px;
-    font-size: 14px;
-    border: 1px;
-    border-color: orange;
+    width: 480px;
+    box-shadow: 0 0 7px 1px  rgb(206, 206, 206);
+    border-radius: 45px;
+    background-color: rgb(255, 255, 255);
 }
 
 input{
-    border: 1px;
-    border-radius: 3px;
+    border: 0.5px solid rgba(56, 56, 56, 0.616);
     line-height: 35px;
     font-size: 12px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
+
 .wrapper {
+    margin: 0 auto;
     padding: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 div {
@@ -41,6 +45,7 @@ div {
 
 .title {
     text-align: center;
+    color: rgb(255, 155, 47);
 }
 
 .email input {
@@ -66,14 +71,18 @@ div {
 
 .signUp button {
     width: 100%;
+    background-color: rgb(255, 155, 47);
     cursor:pointer;
+    border-radius: 45px;
     border: 0;
     outline: 0;
 }
 
 button{
     cursor: pointer;
-    height: 30px;
+    color:white;
+    width: 100px;
+    height: 40px;
 }
 
 .error{
