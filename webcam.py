@@ -100,6 +100,6 @@ while True:
         end_total = time.time()
         total_time = str(datetime.timedelta(seconds=end_total - start_total))
         play_time = str(datetime.timedelta(seconds=start_play))
-        print(total_time)
-        print(play_time)
+        study_time = str(datetime.timedelta(seconds = end_total - start_total - start_play))
+        print(study_time)
         break
