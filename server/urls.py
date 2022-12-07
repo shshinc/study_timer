@@ -20,4 +20,5 @@ import server.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', server.views.index, name='index'),
+    # path('accounts/', include('accounts.urls')),
 ]
