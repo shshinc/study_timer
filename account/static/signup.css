@@ -22,27 +22,6 @@ body {
     background-color: rgba(255, 255, 255, 0.804);
 }
 
-div.password{
-    position: relative;
-    padding: 20px;
-}
-
-div.password input{
-    width: 300px;
-    height: 30px;
-    background-color: black;
-    border: 0;
-    color: white;
-    text-indent: 10px;
-}
-
-div.password i{
-    position: absolute;
-    left: 75%;
-    top: 27px;
-    color: orange;
-}
-
 input{
     border: 0.5px solid rgba(56, 56, 56, 0.616);
     line-height: 35px;
@@ -64,6 +43,26 @@ div {
     padding-bottom: 8px;
 }
 
+div.password, div.passwordCheck{
+    position: relative;
+}
+
+div.password input, div.passwordCheck input{
+    width: 100%;
+    border: 0.5px solid rgba(56, 56, 56, 0.616);
+    line-height: 35px;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+div.password i, div.passwordCheck i{
+    position: absolute;
+    left: 75%;
+    top: 27px;
+    color: orange;
+}
+
 .title {
     text-align: center;
     color: rgb(255, 155, 47);
@@ -77,13 +76,13 @@ div {
     width: 100%;
 }
 
-.password input {
+/* .password input {
     width: 100%;
 }
 
 .passwordCheck input {
     width: 100%;
-}
+} */
 
 .purpose select {
     width: 100%;
