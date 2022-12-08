@@ -216,7 +216,8 @@
 
     <form action="after/" method="POST">
         {% csrf_token %}
-        <input type="text" name="goal">
+        <input type="text" name="today_goal">
+        <input type="text" name="week_goal">
         <button type="submit" class="btn btn-primary">설정</button>
     </form>
 
