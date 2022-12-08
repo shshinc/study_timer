@@ -201,20 +201,19 @@
         <h1 style="margin-top: 10px;"id="stopwatch" >
             00:00:00
         </h1>
-        <div style="margin-top: -10px;">
+        <div style="margin-top: -10px;text-align: right;">
             <button class="myButton" onclick="startClock()">시작</button>
-            <button class="myButton"  onclick="stopClock()">정지</button>
-            <button class="myButton"  onclick="resetClock()">재설정</button>
         </div>
     </div>
     <script src="{%static 'main.js'%}"></script>
 
     <div style="margin: 2%; margin-top: 0;float: left;">
     <p style="margin-top:0">목표시간</p>
-    <h1>일일 목표량 {{today_goal}}시간</h1>
-    <h1>주간 목표량 {{week_goal}}시간</h1>
-    <button onclick="location.href='/main'">재설정</button>
-    
-</div>
+    <h2>일일 목표량 {{today_goal}}시간</h2>
+    <h2 style="margin-top:-8px;">주간 목표량 {{week_goal}}시간</h2>
+    <div style="margin-top: -8px;text-align: right;">
+        <button onclick="location.href='/main'">재설정</button>
+    </div>
+    </div>
 </body>
 </html>
