@@ -192,16 +192,16 @@
 
 <div class="wapper3">
     <div style="margin: 2%; margin-top: 0; margin-right:10%;float: left;">
-        <p style="margin-top:0">순공시간</p>
-        <h1 id="study_time" >
+        <p style="margin-top:0; margin-bottom: -10px;">순공시간</p>
+        <h1 style="margin-top: 10px;"id="study_time" >
             00:00:00
             {{study_time}}
         </h1>
-        <p style="margin-top:0">공부시간</p>
-        <h1 id="stopwatch" >
+        <p style="margin-top:0; margin-bottom: -10px;">공부시간</p>
+        <h1 style="margin-top: 10px;"id="stopwatch" >
             00:00:00
         </h1>
-        <div>
+        <div style="margin-top: -10px;">
             <button class="myButton" onclick="startClock()">시작</button>
             <button class="myButton"  onclick="stopClock()">정지</button>
             <button class="myButton"  onclick="resetClock()">재설정</button>
@@ -218,10 +218,10 @@
         {% csrf_token %}
         <div>
             <div>
-            <input type="text" name="today_goal" placeholder="오늘목표: HH:MM:SS">
+            <input type="text" name="today_goal" placeholder="일일 목표량">
             </div>
             <div style="margin-top: 3px;">
-            <input type="text" name="week_goal"placeholder="주간목표: HH:MM:SS">
+            <input type="text" name="week_goal"placeholder="주간 목표량">
             </div>
         </div>
         <div style="text-align: right; margin-top: 10px;">
