@@ -205,19 +205,10 @@
     <script src="{%static 'main.js'%}"></script>
 
     <div style="margin: 2%; margin-top: 0;float: left;">
-        <p style="margin-top:0">목표시간</p>
-
-    {% block content %}
-
-    <form action="after/" method="POST">
-        {% csrf_token %}
-        <input type="text" name="goal">
-        <button type="submit" class="btn btn-primary">설정</button>
-    </form>
-
-    </div>
- 
-    {% endblock %}
+    <p style="margin-top:0">목표시간</p>
+    <h1> {{goal}}시간</h1>
+    <button type="button" onclick="window.open('/main');">재설정</button>
+    
 </div>
 </body>
 </html>

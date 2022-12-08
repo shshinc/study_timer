@@ -4,6 +4,6 @@ import main.views
 
 urlpatterns = [
     path('', index, name='index'),
-    path('', main.views.post, name='post'),
+    path('after/', main.views.after),
 ]
 

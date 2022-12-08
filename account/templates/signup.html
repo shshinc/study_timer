@@ -6,6 +6,7 @@
     <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link href="../static/signup.css" rel="stylesheet" />
     <script src="../static/signup.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <style type="text/css" >
@@ -29,6 +30,20 @@
         <div class="password">
             <input id="password" type="password" placeholder="비밀번호를 입력해 주세요.">
             <i class="fa fa-eye fa-lg"></i>
+            <script>
+                $(document).ready(function(){
+                    $('.password i' || '.passwordCheck i').on('click',function(){
+                        $('input').toggleClass('active');
+                        if($('input').hasClass('active')){
+                            $(this).attr('class',"fa fa-eye-slash fa-lg")
+                            .prev('input').attr('type',"text");
+                        }else{
+                            $(this).attr('class',"fa fa-eye fa-lg")
+                            .prev('input').attr('type','password');
+                        }
+                    });
+                  });
+            </script>
             <div id="passwordError" class="error"></div>
         </div>
         <div class="passwordCheck">
