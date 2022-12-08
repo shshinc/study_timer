@@ -216,9 +216,17 @@
 
     <form action="after/" method="POST">
         {% csrf_token %}
-        <input type="text" name="today_goal">
-        <input type="text" name="week_goal">
+        <div>
+            <div>
+            <input type="text" name="today_goal" placeholder="오늘목표: HH:MM:SS">
+            </div>
+            <div style="margin-top: 3px;">
+            <input type="text" name="week_goal"placeholder="주간목표: HH:MM:SS">
+            </div>
+        </div>
+        <div style="text-align: right; margin-top: 10px;">
         <button type="submit" class="btn btn-primary">설정</button>
+        </div>
     </form>
 
     </div>
