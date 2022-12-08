@@ -43,11 +43,12 @@ div {
     padding-bottom: 8px;
 }
 
-div.password, div.passwordCheck{
+.password, .passwordCheck{
+    margin: 0 auto;
     position: relative;
 }
 
-div.password input, div.passwordCheck input{
+.password input, .passwordCheck input{
     width: 100%;
     border: 0.5px solid rgba(56, 56, 56, 0.616);
     line-height: 35px;
@@ -56,11 +57,11 @@ div.password input, div.passwordCheck input{
     padding-right: 10px;
 }
 
-div.password i, div.passwordCheck i{
+.password i, .passwordCheck i{
     position: absolute;
     left: 75%;
     top: 27px;
-    color: orange;
+    color: rgb(255, 155, 47);
 }
 
 .title {
