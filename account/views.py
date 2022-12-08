@@ -13,9 +13,9 @@ def signup(request):
         return render(request, 'signup.html')
     
     elif request.method == 'POST':
-        username = request.POST.get('username', '미서')
-        password = request.POST.get('password', True)
-        re_password = request.POST.get('passwordCheck', True)
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        re_password = request.POST.get('passwordCheck')
  
         response = {}
         if not (username and password and re_password):
@@ -26,7 +26,7 @@ def signup(request):
             response['error'] = '비밀번호를 입력하세요.'
         if password != re_password:
             response['error'] = '비밀번호를 확인하세요.'
-        else:
+        if not response['error']:
             users = User(
                 username = username,
                 password = password
