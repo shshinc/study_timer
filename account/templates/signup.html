@@ -2,11 +2,11 @@
 <html lang="ko">
 
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>회원가입 페이지</title>
     <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link href="../static/signup.css" rel="stylesheet" />
     <script src="../static/signup.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <style type="text/css" >
@@ -32,7 +32,7 @@
             <i class="fa fa-eye fa-lg"></i>
             <script>
                 $(document).ready(function(){
-                    $('.password i' || '.passwordCheck i').on('click',function(){
+                    $('.password i').on('click',function(){
                         $('input').toggleClass('active');
                         if($('input').hasClass('active')){
                             $(this).attr('class',"fa fa-eye-slash fa-lg")
@@ -51,7 +51,7 @@
             <i class="fa fa-eye fa-lg"></i>
             <script>
                 $(document).ready(function(){
-                    $('.passwordCheck i' || '.passwordCheck i').on('click',function(){
+                    $('.passwordCheck i').on('click',function(){
                         $('input').toggleClass('active');
                         if($('input').hasClass('active')){
                             $(this).attr('class',"fa fa-eye-slash fa-lg")
