@@ -60,9 +60,9 @@ div {
 
 .password i, .passwordCheck i{
     position: absolute;
-    left: 75%;
-    top: 27px;
-    color: rgb(255, 155, 47);
+    left: 90%;
+    top: 15.5px;
+    color: rgba(56, 56, 56, 0.616);
 }
 
 .title {
