@@ -206,18 +206,9 @@
 
     <div style="margin: 2%; margin-top: 0;float: left;">
         <p style="margin-top:0">목표시간</p>
-
-    {% block content %}
-
-    <form action="after/" method="POST">
-        {% csrf_token %}
-        <input type="text" name="goal">
-        <button type="submit" class="btn btn-primary">POST</button>
-    </form>
-
-    </div>
- 
-    {% endblock %}
+        <p>{{goal}}</p>
+    
+    
 </div>
 </body>
 </html>
