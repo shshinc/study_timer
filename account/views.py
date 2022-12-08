@@ -32,4 +32,5 @@ def signup(request):
                 password = password
             )
             users.save()
-        return render(request, 'signup.html', response)
+            return redirect('/')
+        return redirect('/')
