@@ -3,7 +3,7 @@
 function signUpCheck(){
 
   let email = document.getElementById("email").value
-  let name = document.getElementById("name").value
+  let name = document.getElementById("username").value
   let password = document.getElementById("password").value
   let passwordCheck = document.getElementById("passwordCheck").value
   let purpose = document.getElementById("purpose").value

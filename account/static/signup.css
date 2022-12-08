@@ -74,17 +74,9 @@ div {
     width: 100%;
 }
 
-.name input {
+.username input {
     width: 100%;
 }
-
-/* .password input {
-    width: 100%;
-}
-
-.passwordCheck input {
-    width: 100%;
-} */
 
 .purpose select {
     width: 100%;
