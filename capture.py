@@ -22,4 +22,9 @@ def get_study_time():
     class_ids = []
     confidences = []
     boxes = []
+    for out in outs:
+        for detection in out:
+            scores = detection[5:]
+            class_id = np.argmax(scores)
+            confidence = scores[class_id]
     return
