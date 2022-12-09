@@ -18,4 +18,8 @@ def get_study_time():
     blob = cv2.dnn.blobFromImage(img, 0.00392, (416, 416), (0, 0, 0), True, crop=False)
     net.setInput(blob)
     outs = net.forward(output_layers)
+
+    class_ids = []
+    confidences = []
+    boxes = []
     return
