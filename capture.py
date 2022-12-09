@@ -13,7 +13,7 @@ def get_study_time():
 
     study_time = 30
     play_time = 0
-    count = 1
+    count = 0
     img = cv2.imread("C:/Users/ksk03/Downloads/image(" + str(count) + ").jpg")
     img = cv2.resize(img, None, fx=0.4, fy=0.4)
     height, width, channels = img.shape
