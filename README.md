@@ -8,9 +8,9 @@
 
 ### 설치방법
 
- - 용량이 큰 파일은 git에 올리지 않았습니다.
- - yolo와 roboflow의 설치는 google colab에서 진행하였습니다.
- - 모델 학습은 google colab에서 진행하였습니다.
+ - 용량이 큰 파일은 git에 올리지 않았다.
+ - yolo와 roboflow의 설치는 google colab에서 진행하였다.
+ - 모델 학습은 google colab에서 진행하였다.
 
 model 설치
  ```
@@ -35,24 +35,30 @@ model 설치
 ### 의존성
 
 for model
- - python==3.x
- - opencv-python==4.6.0.66
- - numpy==1.23.5
- - torch==1.2.0
- - torchvision==0.4.0a0+6b959ee
- - tensorflow==2.10.1
- - yolov==https://github.com/ultralytics/yolov5.git
- - glob
- - yaml
+ ```
+ python==3.x
+ opencv-python==4.6.0.66
+ numpy==1.23.5
+ torch==1.2.0
+ torchvision==0.4.0a0+6b959ee
+ tensorflow==2.10.1
+ yolov==https://github.com/ultralytics/yolov5.git
+ glob
+ yaml
+ ```
  
 for 웹 데이터 크롤링
- - selenium==3.8.1
- - requests==2.28.1
- - ChromeDriver
+ ```
+ selenium==3.8.1
+ requests==2.28.1
+ ChromeDriver
+ ```
  
 for server
- - Django==4.1.4
-
+ ```
+ Django==4.1.4
+ ```
+ 
 ### 사용 데이터
 
 구글 이미지 크롤링을 통해 이미지 파일들을 받고 roboflow를 통하여 dataset을 구성하였다.
