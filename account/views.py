@@ -23,4 +23,4 @@ def signup(request):
             email = email
         )
         users.save()
-        return render(request, 'signup.html')
+        return render(request, 'login.html')
