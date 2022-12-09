@@ -38,4 +38,9 @@ def get_study_time():
                 boxes.append([x, y, w, h])
                 confidences.append(float(confidence))
                 class_ids.append(class_id)
+    indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.5, 0.4)
+
+    font = cv2.FONT_HERSHEY_PLAIN
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
     return
