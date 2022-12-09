@@ -22,15 +22,15 @@
             <div class="title"><h1 style="font-size: 34px; font-weight: bold;">회원가입</h1></div>
             <div style = "padding: 19px;"></div>
             <div class="email">
-                <input id="email" type="text" placeholder="이메일을 입력해 주세요.">
+                <input id="email" name="email" type="text" placeholder="이메일을 입력해 주세요.">
                 <div id="emailError" class="error"></div>
             </div>
             <div class="username">
-                <input id="name"  type="text" placeholder="이름을 입력해 주세요.">
+                <input id="name"  name="username" type="text" placeholder="이름을 입력해 주세요.">
                 <div id="nameError" class="error"></div>
             </div>
             <div class="password">
-                <input id="password" type="password" placeholder="비밀번호를 입력해 주세요.">
+                <input id="password" name="password" type="password" placeholder="비밀번호를 입력해 주세요.">
                 <i class="fa fa-eye fa-lg"></i>
                 <script>
                     $(document).ready(function(){
@@ -49,7 +49,7 @@
                 <div id="passwordError" class="error"></div>
             </div>
             <div class="passwordCheck">
-                <input id="passwordCheck" type="password" placeholder="비밀번호를 다시 입력해 주세요.">
+                <input id="passwordCheck" name="passwordCheck" type="password" placeholder="비밀번호를 다시 입력해 주세요.">
                 <i class="fa fa-eye fa-lg"></i>
                 <script>
                     $(document).ready(function(){
