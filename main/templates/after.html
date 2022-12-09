@@ -7,7 +7,6 @@
     <title>Let's Study</title>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<!-- 화면 캡쳐 CDN -->
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
@@ -22,7 +21,6 @@
     <form action="end/" method="POST">
         {% csrf_token %}
         <input type="hidden" name="size" value='test'>
-
     <script>
         var video = document.querySelector("#videoElement");
 
@@ -32,11 +30,9 @@
             video.srcObject = stream;
             })
             .catch(function (err0r) {
-            console.log("Something went wrong!");
+            console.log("웹캠 업로드 불가");
             });
         }
-
-
     </script>
     {% endblock %}
 <div class="graph">
