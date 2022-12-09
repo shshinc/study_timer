@@ -14,4 +14,8 @@ def get_study_time():
     img = cv2.imread("C:/Users/ksk03/Downloads/image(" + str(count) + ").jpg")
     img = cv2.resize(img, None, fx=0.4, fy=0.4)
     height, width, channels = img.shape
+
+    blob = cv2.dnn.blobFromImage(img, 0.00392, (416, 416), (0, 0, 0), True, crop=False)
+    net.setInput(blob)
+    outs = net.forward(output_layers)
     return
