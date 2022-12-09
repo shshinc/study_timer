@@ -35,8 +35,4 @@ def signup(request):
             )
             users.save()
             return render(request, 'signup.html')
-        return render(request, 'signup.html', {
-            'username': username,
-            'password': password,
-            'email': email
-        })
+        return render(request, 'signup.html', {'response': response['error']})
