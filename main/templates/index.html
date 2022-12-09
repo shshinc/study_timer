@@ -27,11 +27,10 @@
         }
     </script>
 <div class="graph">
-    <div class="doughnut">
+    <div style="margin-top: 10px;" class="doughnut">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js">
      Chart.defaults.global.defaultFontFamily = 'Noto Sans KR', sans-serif;</script>
      <div style="width: 300px; height: 300px;padding-top:10px;float: left;">
-         <!--차트가 그려질 부분-->
          <canvas id="today_goal"></canvas>
      </div>
      <script>
@@ -147,7 +146,7 @@
                             label: '이번주 총 공부량', //차트 제목
                             fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
                             data: [
-                                21,19,25,20,23,26,25 //x축 label에 대응되는 데이터 값
+                                0,0,0,0,0,0,0 //x축 label에 대응되는 데이터 값
                             ],
                             backgroundColor: [
                                 //색상
@@ -194,7 +193,7 @@
     <div style="margin: 2%; margin-top: 0; margin-right:10%;float: left;">
         <p style="margin-top:0; margin-bottom: -10px;">순공시간</p>
         <h1 style="margin-top: 10px;"id="study_time" >
-            00:00:00
+            0:00:00
         </h1>
         <p style="margin-top:0; margin-bottom: -10px;">공부시간</p>
         <h1 style="margin-top: 10px;"id="stopwatch" >
@@ -213,7 +212,7 @@
         {% csrf_token %}
         <div>
             <div>
-            <input type="text" name="today_goal" placeholder="일일 목표량">
+            <input style="margin-top: -5px;" type="text" name="today_goal" placeholder="일일 목표량">
             </div>
             <div style="margin-top: 3px;">
             <input type="text" name="week_goal"placeholder="주간 목표량">
