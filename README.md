@@ -11,6 +11,7 @@
  - 용량이 큰 파일은 git에 올리지 않았습니다.
  - yolo와 roboflow의 설치는 google colab에서 진행하였습니다.
  - 모델 학습은 google colab에서 진행하였습니다.
+
 opencv
  ```
  pip install opencv-python
