@@ -53,6 +53,7 @@ def login(request):
         password = request.POST.get('password')
         
         response = {}
+        
         if not email or not password:
             response['error'] = '값을 입력해주세요'
             return render(request, 'login.html', {'response': response['error']})
@@ -65,12 +66,15 @@ def login(request):
         
         if signup_db.filter(email=request.POST.get('email')).exists():
             if signup_db.filter(password=request.POST.get('password')).exists():
-                # auth.login(request, user)
                 return redirect('../main')
             else:
                 response['error'] = '비밀번호를 확인해주세요'
                 return render(request, 'login.html', {'response': response['error']})
             
         else:
-            response['error'] = '아이디를 확인해주세요'
-            return render(request, 'login.html', {'response': response['error']})
+            if signup_db.filter(email=request.POST.get('password')).exists():
+                response['error'] = '아이디를 확인해주세요'
+                return render(request, 'login.html', {'response': response['error']})
+            else:
+                response['error'] = '아이디 및 비밀번호를 확인해주세요'
+                return render(request, 'login.html', {'response': response['error']})
