@@ -3,10 +3,10 @@ import numpy as np
 import datetime
 
 real_study_time = 0
+total_time = 0
 count = 1
 def get_study_time():
-    global real_study_time, count
-
+    global real_study_time, count, total_time
     net = cv2.dnn.readNet("yolov3.weights", "yolov3.cfg")
     classes = []
     with open("yolo.names", "r") as f:
@@ -17,7 +17,7 @@ def get_study_time():
 
     study_time = 30
     play_time = 0
-    img = cv2.imread("C:/Users/ksk03/Downloads/image (" + str(count) + ").jpg")
+    img = cv2.imread("D:/download/image (" + str(count) + ").jpg")
     if img is None:
         return '0:00:00'
     img = cv2.resize(img, None, fx=0.4, fy=0.4)
@@ -59,12 +59,15 @@ def get_study_time():
             print(label)
             if label == 'cell phone':
                 play_time = 30
-    print(play_time)
+
     study_time -= play_time
     real_study_time += study_time
     study_time = str(datetime.timedelta(seconds=real_study_time, microseconds=0))
+    total_tmp = 0
+    total_tmp += 30
+    total_time_tmp = str(datetime.timedelta(seconds=total_time, microseconds=0))
     count += 1
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-    return study_time[:7]
+    return (study_time[:7], total_time_tmp[:7])
  

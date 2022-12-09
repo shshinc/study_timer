@@ -14,8 +14,8 @@ def after(request):
 
 def image(request):
     size = request.POST.get('size')
-    doing_study = capture.get_study_time()
-    return render(request, 'end.html', {'size':size,  'study_time' : doing_study})
+    doing_study, total_time = capture.get_study_time()
+    return render(request, 'end.html', {'size':size,  'study_time' : doing_study, 'total_time':total_time})
 
 def after2(request):
     today_goal = request.POST.get('today_goal')
