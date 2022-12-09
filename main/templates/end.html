@@ -13,21 +13,14 @@
     <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
 </head>
 <body>
-<h1>{{size}}</h1>
-<h1>{{study_time}}</h1>
+
 <div class="wrapper">
     <div id="container" style="float: left;">
         <video autoplay="true" id="videoElement">
         </video>
     </div>
-    <!-- {% block content %}
-    <form action="end/" method="POST">
-        {% csrf_token %}
-        <input type="hidden" name="size" value='test'> -->
-        <!-- <input type="text" name="k"> -->
     <button type="button" id="webcamBtn">시작</button>
-    <button type="button" id="endBtn">끝</button>
-    <!-- </form> -->
+    <!-- <button type="button" id="endBtn">끝</button> -->
     <script>
         var video = document.querySelector("#videoElement");
 
@@ -63,7 +56,6 @@
             clearInterval(auto_capture)
         });
     </script>
-    {% endblock %}
 <div class="graph">
     <div class="doughnut">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js">
@@ -80,7 +72,7 @@
                data: {
                   datasets: [{
                      data: [
-                        50,50
+                        0,0
                      ],
                      backgroundColor: [
                         "orange",
@@ -128,7 +120,7 @@
                 data: {
                     datasets: [{
                     data: [
-                        50,50
+                        0,0
                     ],
                     backgroundColor: [
                         "orange",
@@ -232,12 +224,11 @@
     <div style="margin: 2%; margin-top: 0; margin-right:10%;float: left;">
         <p style="margin-top:0; margin-bottom: -10px;">순공시간</p>
         <h1 style="margin-top: 10px;"id="study_time" >
-            00:00:00
             {{study_time}}
         </h1>
         <p style="margin-top:0; margin-bottom: -10px;">공부시간</p>
         <h1 style="margin-top: 10px;"id="stopwatch" >
-            00:00:00
+            0:00:00
         </h1>
         <div style="margin-top: -10px;text-align: right;">
             <button class="myButton" onclick="startClock()">시작</button>
@@ -250,7 +241,7 @@
     <h2>일일 목표량 {{today_goal}}시간</h2>
     <h2 style="margin-top:-8px;">주간 목표량 {{week_goal}}시간</h2>
     <div style="margin-top: -8px;text-align: right;">
-            <button onclick="location.href='/main'">재설정</button>
+            <button class='resetbtn'onclick="location.href='/main'">재설정</button>
         </div>
     </div>
 </body>
