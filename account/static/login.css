@@ -56,6 +56,14 @@ body{
     padding-top: 10px;
     font-size:14px;
 }
+
+button{
+    cursor: pointer;
+    color:white;
+    width: 100px;
+    height: 40px;
+}
+
 a:link {
     color: rgb(255, 77, 46); 
     text-decoration: none;

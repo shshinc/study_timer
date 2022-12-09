@@ -4,11 +4,6 @@ from .models import User   #같은 경로의 models.py에서 User라는 클래�
 # Register your models here.
 
 class UserAdmin(admin.ModelAdmin) :
-    list_display = (
-        'username', 
-        'password',
-        'email'
-        )
-
+    list_display = ('username', 'password')
 
 admin.site.register(User, UserAdmin) #site에 등록

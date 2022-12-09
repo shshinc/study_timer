@@ -2,6 +2,7 @@
 from django.contrib import auth
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
+from django.contrib.auth.hashers import make_password
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -12,7 +13,7 @@ def signup(request):
     if request.method == 'GET':
         return render(request, 'signup.html')
     
-    elif request.method == 'POST':
+    if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
         re_password = request.POST.get('passwordCheck')
@@ -37,3 +38,26 @@ def signup(request):
         )
         users.save()
         return render(request, 'login.html')
+    
+def login(request):
+    signin_db=User.objects.all()
+    
+    if request.method == 'GET':
+        return render(request, 'login.html')
+    
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user = auth.authenticate(request, email=email, password=password)
+        response = {}
+        
+        if signin_db.filter(email).exists():
+            if signin_db.filter(password).exists():
+                auth.login(request, user)
+                return render(request, 'main/index.html')
+            else:
+                response['error'] = '비밀번호를 확인해주세요'
+                return render(request, 'login.html', {'response': response['error']})
+        else:
+            response['error'] = '메일 주소를 확인해주세요'
+            return render(request, 'login.html', {'response': response['error']})

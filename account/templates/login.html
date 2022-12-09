@@ -6,37 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Let's Study</title>
     <link rel="stylesheet" type="text/css" href="login.css">
+    <link href="signup.html" />
     <link href="../static/login.css" rel="stylesheet" />
     <script src="../static/login.js"></script>
 </head>
 <body>
-    <div class="main">
-        <script>function enterkey() {
-            if (window.event.keyCode == 13) {
-              document.getElementById("login").click();
-            }
-        }</script>
-        <div class="login">
-            <h1 class="logo">LOGIN</h1>
-            <div class="login_id">
-                <input type="text" placeholder="아이디" id="id" class="account"onkeyup="enterkey()">
-            </div>
+    <form method="POST">
+    {% csrf_token %}
+        <div class="main">
+            <script>function enterkey() {
+                if (window.event.keyCode == 13) {
+                document.getElementById("login").click();
+                }
+            }</script>
+            <div class="login">
+                <h1 class="logo">LOGIN</h1>
+                <div class="login_id">
+                    <input name = "email" type="text" placeholder="아이디" id="id" class="account" onkeyup="enterkey()">
+                </div>
 
-            <div class="login_pw">
-                <input type="password" placeholder="비밀번호" id="password" class="account" onkeyup="enterkey()">
+                <div class="login_pw">
+                    <input name = "password" type="password" placeholder="비밀번호" id="password" class="account" onkeyup="enterkey()">
+                </div>
+                <div class="submit">
+                    <button id="login">로그인</button>
+                </div>
+                
+                <div class="signup">
+                <label id="signup">아직 계정이 없다면</label>
+                <a id="signup" href="{% url 'signup' %}">회원가입</a>
+                </div>
+                <p id="alert" class="account"> </p>
+                {% if response %}
+                    {{response}}
+                {% endif %}
             </div>
-            <div class="submit">
-                    <button id="login" class="account">로그인</button>
-            </div>
-            
-            <div class="signup">
-            <label id="signup">아직 계정이 없다면</label>
-            <A id="signup" href="signup.html">회원가입</A>
-            </div>
-            <p id="alert" class="account"> </p>
-            
-        </div>
-    </div>   
-    <script src="login.js"></script>
+        </div>   
+        <script src="login.js"></script>
+    </form>
 </body>
 </html>
