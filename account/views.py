@@ -19,14 +19,16 @@ def signup(request):
         email = request.POST.get('email')
         
         response = {}
-        if not (username and password and re_password):
-            response['error'] = '모든 값을 입력하세요.'
-        if not username:
-            response['error'] = '이름을 입력하세요.'
-        if not password:
-            response['error'] = '비밀번호를 입력하세요.'
         if password != re_password:
-            response['error'] = '비밀번호를 확인하세요.'
+            response['error'] = '비밀번호를 확인해주세요.'
+        if not username:
+            response['error'] = '이름을 입력해주세요.'
+        if not password:
+            response['error'] = '비밀번호를 입력해주세요.'
+        if not re_password:
+            response['error'] = '비밀번호를 다시 입력해주세요.'
+        if (not username) and (not password) and (not re_password):
+            response['error'] = '모든 값을 입력해주세요.'
         if not response['error']:
             users = User(
                 username = username,
