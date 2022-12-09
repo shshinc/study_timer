@@ -26,11 +26,11 @@
                 }
             }</script>
             <div class="login">
-                <h1 class="logo">LOGIN</h1>
+                <h1 class="logo" style="color: rgb(255, 155, 47)">LOGIN</h1>
                 <div class="login_id">
                     <input name = "email" type="text" placeholder="아이디" id="id" class="account" onkeyup="enterkey()">
                 </div>
-
+                <div style="padding: 8px"></div>
                 <div class="login_pw">
                     <input name = "password" type="password" placeholder="비밀번호" id="password" class="account" onkeyup="enterkey()">
                 </div>
@@ -38,7 +38,7 @@
                     <button id="login">로그인</button>
                 </div>
                 <div class="signup">
-                <label id="signup">아직 계정이 없다면</label>
+                <label id="signup" style="color: rgb(192, 192, 192);">아직 계정이 없다면</label>
                 <a id="signup" href="{% url 'signup' %}">회원가입</a>
                 </div>
                 <p id="alert" class="account"> </p>

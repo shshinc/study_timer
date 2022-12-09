@@ -85,7 +85,7 @@ div {
 
 .signUp button {
     width: 100%;
-    background-color: rgb(255, 155, 47);
+    background: linear-gradient(to left, rgb(255, 77, 46), rgb(255, 155, 47));
     cursor:pointer;
     border-radius: 45px;
     border: 0;
