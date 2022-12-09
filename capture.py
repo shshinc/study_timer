@@ -44,6 +44,9 @@ def get_study_time():
     for i in range(len(boxes)):
         if i in indexes:
             x, y, w, h = boxes[i]
+            label = str(classes[class_ids[i]])
+            color = colors[i]
+            cv2.rectangle(img, (x, y), (x + w, y + h), color, 2)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     return
