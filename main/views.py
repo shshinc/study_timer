@@ -10,5 +10,5 @@ def after(request):
     return render(request, 'after.html', context)
 
 def image(request):
-    auto_image = request.POST.get('v')
-    return render(request, 'end.html', {'auto_image':auto_image})
+    size = request.POST.get('size')
+    return render(request, 'end.html', {'size':size})

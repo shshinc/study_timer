@@ -18,8 +18,15 @@
         <video autoplay="true" id="videoElement">
         </video>
     </div>
+    {% block content %}
+    <form action="end/" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="size" value='test'>
+        <!-- <input type="text" name="k"> -->
     <button type="button" id="webcamBtn">시작</button>
     <button type="button" id="endBtn">끝</button>
+    <button type="submit" class="sub">dd</button>
+    </form>
     <script>
         var video = document.querySelector("#videoElement");
 
@@ -34,24 +41,25 @@
         }
 
 
+        //자동 저장
+        document.getElementById("webcamBtn").addEventListener("click",function() {
+            auto_capture = setInterval(function() {
+            var cnt=0
+            html2canvas(document.getElementById("container")).then(function(canvas) {
+                    var el = document.createElement("a")
+                    el.href = canvas.toDataURL("image/jpeg")
+                    el.download = 'image.jpg' //다운로드 할 파일명 설정
+                    el.click()
+                })
+        }, 3000);
+        });
 
-    document.getElementById("webcamBtn").addEventListener("click",function() {
-        auto_capture = setInterval(function() {
-
-        html2canvas(document.getElementById("container")).then(function(canvas) {
-                var el = document.createElement("a")
-                el.href = canvas.toDataURL("image/jpeg")
-                el.download = 'image.jpg' //다운로드 할 파일명 설정
-                el.click()
-            })
-    }, 3000);
-    });
-
-    //끝누르면 중지
-    document.getElementById("endBtn").addEventListener("click",function() {
-        clearInterval(auto_capture)
-    });
+        //끝누르면 중지
+        document.getElementById("endBtn").addEventListener("click",function() {
+            clearInterval(auto_capture)
+        });
     </script>
+    {% endblock %}
 <div class="graph">
     <div class="doughnut">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js">

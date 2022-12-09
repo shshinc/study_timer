@@ -231,13 +231,13 @@
  
     {% endblock %}
 
-    <form action="end/" method="POST">
+
         {% csrf_token %}
         <video id="video" width="320" height="240" autoplay></video>
         <canvas id="canvas" width="960" height="720"></canvas>
         <button type="button" id="webcamBtn">시작</button>
         <button type="button" id="endBtn">끝</button>
-    </form>
+    
     
     <script>
     if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
