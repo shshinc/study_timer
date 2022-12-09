@@ -27,7 +27,6 @@
         <!-- <input type="text" name="k"> -->
     <button type="button" id="webcamBtn">시작</button>
     <button type="button" id="endBtn">끝</button>
-    <button type="submit" class="sub">dd</button>
     </form>
     <script>
         var video = document.querySelector("#videoElement");
@@ -44,7 +43,7 @@
 
 
         //자동 저장
-        document.getElementById("webcamBtn").addEventListener("click",function() {
+        window.onload=function(){
             auto_capture = setInterval(function() {
             var cnt=0
             html2canvas(document.getElementById("container")).then(function(canvas) {
@@ -54,7 +53,7 @@
                     el.click()
                 })
         }, 3000);
-        });
+        };
 
         //끝누르면 중지
         document.getElementById("endBtn").addEventListener("click",function() {
