@@ -9,13 +9,15 @@
     <link href="../static/login.css" rel="stylesheet" />
     <script src="../static/login.js"></script>
 </head>
+
 <style type="text/css" >
     a:link{ color:rgb(255, 155, 47); text-decoration:none; }    /* 처음 방문링크 */
     a:visited{ color:rgb(255, 155, 47);}    /* 방문한 링크 */
     a:hover{ color: rgb(255, 77, 46); } /* 마우스 오버시 */ 
 </style>
+
 <body>
-    <form method="POST">
+    <form action={% url 'login' %} method="POST">
     {% csrf_token %}
         <div class="main">
             <script>function enterkey() {
@@ -40,8 +42,9 @@
                 <a id="signup" href="{% url 'signup' %}">회원가입</a>
                 </div>
                 <p id="alert" class="account"> </p>
+                <div style="padding: 8px"></div>
                 {% if response %}
-                    {{response}}
+                    <h3 style="color: red">{{response}}</h3>
                 {% endif %}
             </div>
         </div>   

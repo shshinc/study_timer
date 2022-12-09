@@ -40,7 +40,7 @@ def signup(request):
         return render(request, 'login.html')
     
 def login(request):
-    signin_db=User.objects.all()
+    signup_db=User.objects.all()
     
     if request.method == 'GET':
         return render(request, 'login.html')
@@ -48,18 +48,26 @@ def login(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
-        user = auth.authenticate(request, email=email, password=password)
+        
         response = {}
+        if not email or not password:
+            response['error'] = '제대로 입력해주세요'
+            return render(request, 'login.html', {'response': response['error']})
+        
+        user = auth.authenticate(request, username=email, password=password)
+        
         if user is not None:
-            auth.login(request, user)
-            return redirect('../main')
-        if signin_db.filter(email).exists():
-            if signin_db.filter(password).exists():
+            auth.login(request, user=user)
+            return redirect('main')
+        
+        if signup_db.filter(email=request.POST.get('email')).exists():
+            if signup_db.filter(password=request.POST.get('password')).exists():
                 auth.login(request, user)
-                return render(request, 'main')
+                return redirect('main')
             else:
                 response['error'] = '비밀번호를 확인해주세요'
                 return render(request, 'login.html', {'response': response['error']})
+            
         else:
             response['error'] = '메일 주소를 확인해주세요'
             return render(request, 'login.html', {'response': response['error']})
