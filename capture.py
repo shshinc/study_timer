@@ -19,7 +19,7 @@ def get_study_time():
     play_time = 0
     img = cv2.imread("D:/download/image (" + str(count) + ").jpg")
     if img is None:
-        return '0:00:00'
+        return '0:00:00', '0:00:00'
     img = cv2.resize(img, None, fx=0.4, fy=0.4)
     height, width, channels = img.shape
 
@@ -63,8 +63,7 @@ def get_study_time():
     study_time -= play_time
     real_study_time += study_time
     study_time = str(datetime.timedelta(seconds=real_study_time, microseconds=0))
-    total_tmp = 0
-    total_tmp += 30
+    total_time += 30
     total_time_tmp = str(datetime.timedelta(seconds=total_time, microseconds=0))
     count += 1
     cv2.waitKey(0)
