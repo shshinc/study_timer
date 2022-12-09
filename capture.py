@@ -3,9 +3,9 @@ import numpy as np
 import datetime
 
 real_study_time = 0
-
+count = 1
 def get_study_time():
-    global real_study_time
+    global real_study_time, count
 
     net = cv2.dnn.readNet("yolov3.weights", "yolov3.cfg")
     classes = []
@@ -17,7 +17,6 @@ def get_study_time():
 
     study_time = 30
     play_time = 0
-    count = 1
     img = cv2.imread("C:/Users/ksk03/Downloads/image (" + str(count) + ").jpg")
     if img is None:
         return '0:00:00'
@@ -57,13 +56,15 @@ def get_study_time():
             color = colors[i]
             cv2.rectangle(img, (x, y), (x + w, y + h), color, 2)
             cv2.putText(img, label, (x, y + 30), font, 3, color, 3)
+            print(label)
             if label == 'cell phone':
                 play_time = 30
+    print(play_time)
     study_time -= play_time
     real_study_time += study_time
     study_time = str(datetime.timedelta(seconds=real_study_time, microseconds=0))
-    print(study_time)
     count += 1
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     return study_time[:7]
+ 
