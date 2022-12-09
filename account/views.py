@@ -16,7 +16,8 @@ def signup(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         re_password = request.POST.get('passwordCheck')
- 
+        email = request.POST.get('email')
+        
         response = {}
         if not (username and password and re_password):
             response['error'] = '모든 값을 입력하세요.'
@@ -29,7 +30,8 @@ def signup(request):
         if not response['error']:
             users = User(
                 username = username,
-                password = password
+                password = password,
+                email = email
             )
             users.save()
             return redirect('/')
