@@ -10,9 +10,9 @@
 </head>
 
 <style type="text/css" >
-    a:link{ font-size: 8px; color:rgb(255, 155, 47); text-decoration:none; }    /* 처음 방문링크 */
-    a:visited{ font-size: 8px; color:rgb(255, 155, 47);}    /* 방문한 링크 */
-    a:hover{ font-size:8px; color: rgb(255, 77, 46); } /* 마우스 오버시 */ 
+    a:link{ font-size: 12.5px; color:rgb(255, 155, 47); text-decoration:none; }    /* 처음 방문링크 */
+    a:visited{ font-size: 12.5px; color:rgb(255, 155, 47);}    /* 방문한 링크 */
+    a:hover{ font-size:12.5px; color: rgb(255, 77, 46); } /* 마우스 오버시 */ 
 </style>
 
 <body style = "margin-left:625px; margin-top:130px;">
@@ -83,8 +83,8 @@
                 <button id="signUpButton" onclick="signUpCheck()">
                     <h1 style="font-size: 14px;">눌러서 회원가입하기</h1></button>
             </div>
-            <div style="position:absolute; left:690px; top:697px; font-size: 8px; color: rgb(192, 192, 192);">이미 계정이 있으신가요?</div>
-            <div style="white-space:nowrap; position:absolute; left:800px; top:694px;"><a href="{% url 'login' %}">여기 클릭</a></div>
+            <h1 style="position:absolute; left:690px; top:697px; font-size: 12.5px; color: rgb(192, 192, 192);">이미 계정이 있으신가요?</h1>
+            <h1 style="white-space:nowrap; position:absolute; left:827px; top:697px;"><a href="{% url 'login' %}">여기 클릭</a></h1>
             <div style="padding: 6px;"></div>
             <div sytle="padding: 7px;"></div>
             {% if response %}
