@@ -40,13 +40,13 @@
                         <h1 style="font-size: 14px"> 로그인 </h1></button>
                 </div>
                 <div class="signup">
-                <label id="signup" style="color: rgb(192, 192, 192); font-size: 12.5px;">아직 계정이 없다면</label>
-                <h1 style="white-space:nowrap; position:absolute; left:808px; top:563px;"><a id="signup" href="{% url 'signup' %}">회원가입</a></h1>
+                <h1 style="position:absolute; left:690px; top:555px; font-size: 12.5px; color: rgb(192, 192, 192);">아직 계정이 없다면</label>
+                <h1 style="white-space:nowrap; position:absolute; left:800px; top:555px;"><a id="signup" href="{% url 'signup' %}">회원가입</a></h1>
                 </div>
                 <p id="alert" class="account"> </p>
-                <div style="padding: 8px"></div>
+                <div></div>
                 {% if response %}
-                    <h3 style="color: red">{{response}}</h3>
+                    <h1 style="color: red; font-size: 15px;">{{response}}</h1>
                 {% endif %}
             </div>
         </div>   
