@@ -16,17 +16,18 @@
     a:hover{ color: rgb(255, 77, 46); } /* 마우스 오버시 */ 
 </style>
 
-<body>
+<body style = "margin-left:625px; margin-top:130px;">
     <form action={% url 'login' %} method="POST">
     {% csrf_token %}
         <div class="main">
+            <div class="title"><h1 style="font-size: 34px; font-weight: bold;">로그인</h1></div>
+            <div style = "padding: 19px;"></div>
             <script>function enterkey() {
                 if (window.event.keyCode == 13) {
                 document.getElementById("login").click();
                 }
             }</script>
             <div class="login">
-                <h1 class="logo" style="color: rgb(255, 155, 47)">LOGIN</h1>
                 <div class="login_id">
                     <input name = "email" type="text" placeholder="아이디" id="id" class="account" onkeyup="enterkey()">
                 </div>
