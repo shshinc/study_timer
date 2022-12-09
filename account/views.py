@@ -58,12 +58,12 @@ def login(request):
         
         if user is not None:
             auth.login(request, user=user)
-            return redirect('main')
+            return redirect('../main')
         
         if signup_db.filter(email=request.POST.get('email')).exists():
             if signup_db.filter(password=request.POST.get('password')).exists():
-                auth.login(request, user)
-                return redirect('main')
+                # auth.login(request, user)
+                return redirect('../main')
             else:
                 response['error'] = '비밀번호를 확인해주세요'
                 return render(request, 'login.html', {'response': response['error']})
