@@ -1,13 +1,255 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Let's Study</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<!-- 화면 캡쳐 CDN -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
 </head>
 <body>
-    <h1>{{size}}</h1>
-    <h1>{{study_time}}</h1>
+<h1>{{size}}</h1>
+<h1>{{study_time}}</h1>
+<div class="wrapper">
+    <div id="container" style="float: left;">
+        <video autoplay="true" id="videoElement">
+        </video>
+    </div>
+    {% block content %}
+    <form action="end/" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="size" value='test'>
+        <!-- <input type="text" name="k"> -->
+    <button type="button" id="webcamBtn">시작</button>
+    <button type="button" id="endBtn">끝</button>
+    <button type="submit" class="sub">dd</button>
+    </form>
+    <script>
+        var video = document.querySelector("#videoElement");
+
+        if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+            video.srcObject = stream;
+            })
+            .catch(function (err0r) {
+            console.log("Something went wrong!");
+            });
+        }
+
+
+        //자동 저장
+        document.getElementById("webcamBtn").addEventListener("click",function() {
+            auto_capture = setInterval(function() {
+            var cnt=0
+            html2canvas(document.getElementById("container")).then(function(canvas) {
+                    var el = document.createElement("a")
+                    el.href = canvas.toDataURL("image/jpeg")
+                    el.download = 'image.jpg' //다운로드 할 파일명 설정
+                    el.click()
+                })
+        }, 3000);
+        });
+
+        //끝누르면 중지
+        document.getElementById("endBtn").addEventListener("click",function() {
+            clearInterval(auto_capture)
+        });
+    </script>
+    {% endblock %}
+<div class="graph">
+    <div class="doughnut">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js">
+     Chart.defaults.global.defaultFontFamily = 'Noto Sans KR', sans-serif;</script>
+     <div style="width: 300px; height: 300px;padding-top:10px;float: left;">
+         <!--차트가 그려질 부분-->
+         <canvas id="today_goal"></canvas>
+     </div>
+     <script>
+
+         var ctx = document.getElementById('today_goal');
+         var config = {
+               type: 'doughnut',
+               data: {
+                  datasets: [{
+                     data: [
+                        50,50
+                     ],
+                     backgroundColor: [
+                        "orange",
+                        "white"
+                     ],
+                     borderColor: [
+                             //경계선 색상
+                             'rgba(255, 159, 64, 1)',
+                             'rgba(255, 159, 64, 1)'
+                         ],
+                     borderWidth: 1, //경계선 굵기
+                     label: 'Dataset 1'
+                  }],
+                  labels: [
+                     '오늘 공부양',
+                     '남은 목표양'
+                  ]
+               },
+               options: {
+                  responsive: false,
+                  legend: {
+                     position: 'top',
+                  },
+                  title: {
+                     display:true,
+                     text: '오늘의 목표'
+                  },
+                  animation: {
+                     animateScale: true,
+                     animateRotate: true
+                  }
+               }
+            };
+         var myDoughnutChart = new Chart(ctx, config);
+     </script>
+
+    <div style="width: 300px; height: 300px;padding-top:10px;display: inline-block;">
+        <!--차트가 그려질 부분-->
+        <canvas id="week_goal"></canvas>
+    </div>
+    <script>
+        var ctx = document.getElementById('week_goal');
+        var config = {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                    data: [
+                        50,50
+                    ],
+                    backgroundColor: [
+                        "orange",
+                        "white"
+                    ],
+                    borderColor: [
+                            //경계선 색상
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                    borderWidth: 1, //경계선 굵기
+                    label: 'Dataset 1'
+                    }],
+                    labels: [
+                    '주간 공부양',
+                    '남은 목표양'
+                    ]
+                },
+                options: {
+                    responsive: false,
+                    legend: {
+                    position: 'top',
+                    },
+                    title: {
+                    display:true,
+                    text: '주간 목표'
+                    },
+                    animation: {
+                    animateScale: true,
+                    animateRotate: true
+                    }
+                }
+            };
+        var myDoughnutChart = new Chart(ctx, config);
+    </script>
+    </div>
+        <div style="width: 600px; height: 300px; ">
+            <!--차트가 그려질 부분-->
+            <canvas id="week_study"></canvas>
+        </div>
+        <script type="text/javascript">
+            var context = document
+                .getElementById('week_study')
+                .getContext('2d');
+            var myChart = new Chart(context, {
+                type: 'bar', // 차트의 형태
+                data: { // 차트에 들어갈 데이터
+                    labels: [
+                        //x 축
+                        '월','화','수','목','금','토','일'
+                    ],
+                    datasets: [
+                        { //데이터
+                            label: '이번주 총 공부량', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                21,19,25,20,23,26,25 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                //경계선 색상
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1 //경계선 굵기
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [
+                            {
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }
+                        ]
+                    }
+                }
+            });
+        </script>
+        </div>
+    </div>
+</div>
+
+<div class="wapper3">
+    <div style="margin: 2%; margin-top: 0; margin-right:10%;float: left;">
+        <p style="margin-top:0; margin-bottom: -10px;">순공시간</p>
+        <h1 style="margin-top: 10px;"id="study_time" >
+            00:00:00
+            {{study_time}}
+        </h1>
+        <p style="margin-top:0; margin-bottom: -10px;">공부시간</p>
+        <h1 style="margin-top: 10px;"id="stopwatch" >
+            00:00:00
+        </h1>
+        <div style="margin-top: -10px;text-align: right;">
+            <button class="myButton" onclick="startClock()">시작</button>
+        </div>
+    </div>
+    <script src="{%static 'main.js'%}"></script>
+
+    <div style="margin: 2%; margin-top: 0;float: left;">
+    <p style="margin-top:0">목표시간</p>
+    <h2>일일 목표량 {{today_goal}}시간</h2>
+    <h2 style="margin-top:-8px;">주간 목표량 {{week_goal}}시간</h2>
+    <div style="margin-top: -8px;text-align: right;">
+            <button onclick="location.href='/main'">재설정</button>
+        </div>
+    </div>
 </body>
 </html>
