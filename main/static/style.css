@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+  }
+
+#container {
+	margin: 2% auto;
+    margin-left: 2%;
+	width: 700px;
+	height: 524px;
+}
+#videoElement {
+	width: 700px;
+	height: 525px;
+	background-color: #333;
+}
+
+.wrapper{
+	display: grid;
+	grid-template-columns: 5fr 5fr;
+	margin-bottom: -160px;
+ }
+ 
+.graph{
+	display: inline-block;
+	margin-left: 50px;
+ }
+ 
+.doughnut{
+	display: block;
+	margin-bottom: 100px;
+ 
+ }
+ 
+.wrapper2{
+	display: grid;
+	grid-template-columns: 2.5fr 2.5fr 5fr;
+	margin-top: 0px;
+ }
+
+ .myButton {
+	background:linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+	background-color:#ffc477;
+	border-radius:2px;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:15px;
+	font-weight:light;
+	padding:2px 4.5px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #cc9f52;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
+	background-color:#fb9e25;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+

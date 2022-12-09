@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>회원가입 페이지</title>
+    <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="../static/signup.css" rel="stylesheet" />
+    <script src="../static/signup.js"></script>
+</head>
+
+<style type="text/css" >
+    a:link{ font-size: 8px; color:rgb(255, 155, 47); text-decoration:none; }    /* 처음 방문링크 */
+    a:visited{ font-size: 8px; color:rgb(255, 155, 47);}    /* 방문한 링크 */
+    a:hover{ font-size:8px; color: rgb(255, 77, 46); } /* 마우스 오버시 */ 
+</style>
+
+<body style = "margin-left:625px; margin-top:130px;">
+    <div class="wrapper">
+        <form method="post" action=".">
+        {% csrf_token %} 
+            <div class="title"><h1 style="font-size: 34px; font-weight: bold;">회원가입</h1></div>
+            <div style = "padding: 19px;"></div>
+            <div class="email">
+                <input id="email" name="email" type="text" placeholder="이메일을 입력해 주세요.">
+                <div id="emailError" class="error"></div>
+            </div>
+            <div class="username">
+                <input id="name"  name="username" type="text" placeholder="이름을 입력해 주세요.">
+                <div id="nameError" class="error"></div>
+            </div>
+            <div class="password">
+                <input id="password" name="password" type="password" placeholder="비밀번호를 입력해 주세요.">
+                <i class="fa fa-eye fa-lg"></i>
+                <script>
+                    $(document).ready(function(){
+                        $('.password i').on('click',function(){
+                            $('input').toggleClass('active');
+                            if($('input').hasClass('active')){
+                                $(this).attr('class',"fa fa-eye-slash fa-lg")
+                                .prev('input').attr('type',"text");
+                            }else{
+                                $(this).attr('class',"fa fa-eye fa-lg")
+                                .prev('input').attr('type','password');
+                            }
+                        });
+                    });
+                </script>
+                <div id="passwordError" class="error"></div>
+            </div>
+            <div class="passwordCheck">
+                <input id="passwordCheck" name="passwordCheck" type="password" placeholder="비밀번호를 다시 입력해 주세요.">
+                <i class="fa fa-eye fa-lg"></i>
+                <script>
+                    $(document).ready(function(){
+                        $('.passwordCheck i').on('click',function(){
+                            $('input').toggleClass('active');
+                            if($('input').hasClass('active')){
+                                $(this).attr('class',"fa fa-eye-slash fa-lg")
+                                .prev('input').attr('type',"text");
+                            }else{
+                                $(this).attr('class',"fa fa-eye fa-lg")
+                                .prev('input').attr('type','password');
+                            }
+                        });
+                    });
+                </script>
+                <div id="passwordCheckError" class="error"></div>
+            </div>
+            <div class="purpose">
+                <select id="purpose">
+                    <option selected disabled>공부 목적을 선택해주세요.</option>
+                    <option>입시 공부</option>
+                    <option>고시 공부</option>
+                    <option>개인 공부</option>
+                    <option>취업 공부</option>
+                    <option>시험 공부</option>
+                </select>
+                <div id="purposeError" class="error"></div>
+            </div>
+            <div style="padding: 10px;"></div>
+            <div class="signUp">
+                <button id="signUpButton" onclick="signUpCheck()">
+                    <h1 style="font-size: 14px;">눌러서 회원가입하기</h1></button>
+            </div>
+            <div style="position:absolute; left:690px; top:697px; font-size: 8px; color: rgb(192, 192, 192);">이미 계정이 있으신가요?</div>
+            <div style="white-space:nowrap; position:absolute; left:800px; top:694px;"><a href="file:///C:/Users/miseo/Desktop/gitsign/signup/signup.html">여기 클릭</a></div>
+            <div style="padding: 6px;"></div>
+            <div sytle="padding: 7px;"></div>
+        </form>
+    </div>
+
+</body>
+</html>
