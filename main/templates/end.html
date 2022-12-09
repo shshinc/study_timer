@@ -13,20 +13,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
 </head>
 <body>
-<h1>{{size}}</h1>
 <div class="wrapper">
     <div id="container" style="float: left;">
         <video autoplay="true" id="videoElement">
         </video>
     </div>
-    {% block content %}
-    <!-- <form action="end/" method="POST">
-        {% csrf_token %}
-        <input type="hidden" name="size" value='test'> -->
-        <!-- <input type="text" name="k"> -->
-    <button type="button" id="webcamBtn">시작</button>
-
-    <!-- </form> -->
     <script>
         var video = document.querySelector("#videoElement");
 
@@ -55,15 +46,11 @@
                     document.getElementById("smb_form").submit();  
                 });
   
-        }, 2000);
+        }, 30000);
         };
 
-        //끝누르면 중지
-        document.getElementById("endBtn").addEventListener("click",function() {
-            clearInterval(auto_capture)
-        });
+
     </script>
-    {% endblock %}
 <div class="graph">
     <div class="doughnut">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js">
@@ -239,7 +226,6 @@
             {{total_time}}
         </h1>
         <div style="margin-top: -10px;text-align: right;">
-            <button class="myButton" onclick="startClock()">시작</button>
         </div>
     </div>
     <script src="{%static 'main.js'%}"></script>
