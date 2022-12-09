@@ -51,7 +51,7 @@ def login(request):
         
         response = {}
         if not email or not password:
-            response['error'] = '제대로 입력해주세요'
+            response['error'] = '값을 입력해주세요'
             return render(request, 'login.html', {'response': response['error']})
         
         user = auth.authenticate(request, username=email, password=password)
@@ -69,5 +69,5 @@ def login(request):
                 return render(request, 'login.html', {'response': response['error']})
             
         else:
-            response['error'] = '메일 주소를 확인해주세요'
+            response['error'] = '아이디를 확인해주세요'
             return render(request, 'login.html', {'response': response['error']})

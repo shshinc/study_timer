@@ -2,7 +2,7 @@
 
 function signUpCheck(){
 
-  let email = document.getElementById("email").value
+  // let email = document.getElementById("email").value
   let name = document.getElementById("username").value
   let password = document.getElementById("password").value
   let passwordCheck = document.getElementById("passwordCheck").value
@@ -10,27 +10,27 @@ function signUpCheck(){
   let check = true;
 
   // 이메일확인
-  if(email.includes('@')){
-    let emailId = email.split('@')[0]
-    let emailServer = email.split('@')[1]
-    if(emailId === "" || emailServer === ""){
-      document.getElementById("emailError").innerHTML="이메일이 올바르지 않습니다."
-      check = false
-    }
-    if(emailServer.includes('.')){
-        let emailServ1 = emailServer.split('.')[1]
-        if(emailServ1 !== "com" && emailServ1 !== "net" && emailServ1 !== "ac"){
-            document.getElementById("emailError").innerHTML="이메일이 올바르지 않습니다."
-            check = false
-        }
-    }
-    else{
-      document.getElementById("emailError").innerHTML=""
-    }
-  }else{
-    document.getElementById("emailError").innerHTML="이메일이 올바르지 않습니다."
-    check = false
-  }
+  // if(email.includes('@')){
+  //   let emailId = id.split('@')[0]
+  //   let emailServer = email.split('@')[1]
+  //   if(emailId === "" || emailServer === ""){
+  //     document.getElementById("emailError").innerHTML="이메일이 올바르지 않습니다."
+  //     check = false
+  //   }
+  //   if(emailServer.includes('.')){
+  //       let emailServ1 = emailServer.split('.')[1]
+  //       if(emailServ1 !== "com" && emailServ1 !== "net" && emailServ1 !== "ac"){
+  //           document.getElementById("emailError").innerHTML="이메일이 올바르지 않습니다."
+  //           check = false
+  //       }
+  //   }
+  //   else{
+  //     document.getElementById("emailError").innerHTML=""
+  //   }
+  // }else{
+  //   document.getElementById("emailError").innerHTML="이메일이 올바르지 않습니다."
+  //   check = false
+  // }
 
 
   // 이름확인
@@ -72,7 +72,7 @@ function signUpCheck(){
   }
   
   if(check){
-    document.getElementById("emailError").innerHTML=""
+    // document.getElementById("emailError").innerHTML=""
     document.getElementById("nameError").innerHTML=""
     document.getElementById("passwordError").innerHTML=""
     document.getElementById("passwordCheckError").innerHTML=""
