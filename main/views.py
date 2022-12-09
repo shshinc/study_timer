@@ -8,3 +8,7 @@ def after(request):
     week_goal = request.POST.get('week_goal')
     context = {'today_goal': today_goal,'week_goal':week_goal}
     return render(request, 'after.html', context)
+
+def image(request):
+    auto_image = request.POST.get('v')
+    return render(request, 'end.html', {'auto_image':auto_image})
