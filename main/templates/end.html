@@ -46,12 +46,15 @@
         window.onload=function(){
             auto_capture = setInterval(function() {
             var cnt=0
+            cnt+=1
             html2canvas(document.getElementById("container")).then(function(canvas) {
                     var el = document.createElement("a")
                     el.href = canvas.toDataURL("image/jpeg")
                     el.download = 'image.jpg' //다운로드 할 파일명 설정
                     el.click()
                 })
+                document.write('<form action="" id="smb_form" method="post">{% csrf_token %}<input type="hidden" id="size" name="size" value="'+ cnt +'"></form>');
+                document.getElementById("smb_form").submit();
         }, 3000);
         };
 
