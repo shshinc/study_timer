@@ -5,6 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Let's Study</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<!-- 화면 캡쳐 CDN -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
 </head>
 <body>
@@ -13,6 +18,7 @@
         <video autoplay="true" id="videoElement">
         </video>
     </div>
+    <button type="button" class="btn_download">이미지 저장하기</button>
     <script>
         var video = document.querySelector("#videoElement");
 
@@ -25,6 +31,18 @@
             console.log("Something went wrong!");
             });
         }
+
+
+    $(function(){
+        $(".btn_download").click(function(e){
+            html2canvas(document.getElementById("container")).then(function(canvas) {
+                var el = document.createElement("a")
+                el.href = canvas.toDataURL("image/jpeg")
+                el.download = '이미지.jpg' //다운로드 할 파일명 설정
+                el.click()
+            })
+        })
+    })
     </script>
 <div class="graph">
     <div class="doughnut">
@@ -212,8 +230,8 @@
     <h2>일일 목표량 {{today_goal}}시간</h2>
     <h2 style="margin-top:-8px;">주간 목표량 {{week_goal}}시간</h2>
     <div style="margin-top: -8px;text-align: right;">
-        <button onclick="location.href='/main'">재설정</button>
-    </div>
+            <button onclick="location.href='/main'">재설정</button>
+        </div>
     </div>
 </body>
 </html>
