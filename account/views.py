@@ -21,6 +21,9 @@ def signup(request):
         
         response = {}
         
+        if not username or not password or not email:
+            response['error'] = '값을 입력해주세요.'
+            return render(request, 'signup.html', {'response': response['error']})
         if signup_db.filter(email = request.POST.get('email')).exists():
             response['error'] = '중복된 아이디입니다.'
             return render(request, 'signup.html', {'response': response['error']})
