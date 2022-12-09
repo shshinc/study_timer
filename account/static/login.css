@@ -63,11 +63,3 @@ button{
     width: 100px;
     height: 40px;
 }
-
-a:link {
-    color: rgb(255, 77, 46); 
-    text-decoration: none;
-} 
-a:hover {
-    text-decoration: line-through;
-}

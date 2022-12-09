@@ -50,7 +50,9 @@ def login(request):
         password = request.POST.get('password')
         user = auth.authenticate(request, email=email, password=password)
         response = {}
-        
+        if user is not None:
+            auth.login(request, user)
+            return redirect('../main')
         if signin_db.filter(email).exists():
             if signin_db.filter(password).exists():
                 auth.login(request, user)

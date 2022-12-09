@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Let's Study</title>
     <link rel="stylesheet" type="text/css" href="login.css">
-    <link href="signup.html" />
     <link href="../static/login.css" rel="stylesheet" />
     <script src="../static/login.js"></script>
 </head>
+<style type="text/css" >
+    a:link{ color:rgb(255, 155, 47); text-decoration:none; }    /* 처음 방문링크 */
+    a:visited{ color:rgb(255, 155, 47);}    /* 방문한 링크 */
+    a:hover{ color: rgb(255, 77, 46); } /* 마우스 오버시 */ 
+</style>
 <body>
     <form method="POST">
     {% csrf_token %}
