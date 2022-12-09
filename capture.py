@@ -51,7 +51,9 @@ def get_study_time():
             color = colors[i]
             cv2.rectangle(img, (x, y), (x + w, y + h), color, 2)
             cv2.putText(img, label, (x, y + 30), font, 3, color, 3)
-
+            if label == 'cell phone':
+                play_time = 30
+    study_time -= play_time
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     return
