@@ -6,6 +6,5 @@ urlpatterns = [
     path('', index, name='index'),
     path('after/', main.views.after),
     path('after/end/', main.views.image),
-    path('after/end/', main.views.after),
 ]
 

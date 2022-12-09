@@ -52,7 +52,7 @@
 
     </script>
 <div class="graph">
-    <div style="margin-top: 10px;" class="doughnut">
+    <div class="doughnut">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js">
      Chart.defaults.global.defaultFontFamily = 'Noto Sans KR', sans-serif;</script>
      <div style="width: 300px; height: 300px;padding-top:10px;float: left;">
@@ -67,7 +67,7 @@
                data: {
                   datasets: [{
                      data: [
-                        50,50
+                        0,2
                      ],
                      backgroundColor: [
                         "orange",
@@ -115,7 +115,7 @@
                 data: {
                     datasets: [{
                     data: [
-                        50,50
+                        0,15
                     ],
                     backgroundColor: [
                         "orange",
@@ -172,7 +172,7 @@
                             label: '이번주 총 공부량', //차트 제목
                             fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
                             data: [
-                                21,19,25,20,23,26,25 //x축 label에 대응되는 데이터 값
+                                0,0,0,0,0,0,0 //x축 label에 대응되는 데이터 값
                             ],
                             backgroundColor: [
                                 //색상
@@ -225,14 +225,12 @@
         <h1 style="margin-top: 10px;"id="stopwatch" >
             {{total_time}}
         </h1>
-        <div style="margin-top: -10px;text-align: right;">
-        </div>
     </div>
     <script src="{%static 'main.js'%}"></script>
 
     <div style="margin: 2%; margin-top: 0;float: left;">
     <p style="margin-top:0">목표시간</p>
-    <h2 style="margin-top: -5px;">일일 목표량 {{today_goal}}시간</h2>
+    <h2>일일 목표량 {{today_goal}}시간</h2>
     <h2 style="margin-top:-8px;">주간 목표량 {{week_goal}}시간</h2>
     <div style="margin-top: -8px;text-align: right;">
             <button class='resetbtns' onclick="location.href='/main'">재설정</button>
