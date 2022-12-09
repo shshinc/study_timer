@@ -23,7 +23,8 @@
             <div style = "padding: 19px;"></div>
             <div class="email">
                 <input id="email" name="email" type="text" placeholder="아이디를 입력해 주세요.">
-                <div id="emailError" class="error"></div>
+                <div></div>
+                <div></div>
             </div>
             <div class="username">
                 <input id="name"  name="username" type="text" placeholder="이름을 입력해 주세요.">
@@ -78,15 +79,14 @@
                 </select>
                 <div id="purposeError" class="error"></div>
             </div>
-            <div style="padding: 10px;"></div>
             <div class="signUp">
                 <button id="signUpButton" onclick="signUpCheck()">
                     <h1 style="font-size: 14px;">눌러서 회원가입하기</h1></button>
             </div>
-            <h1 style="position:absolute; left:690px; top:697px; font-size: 12.5px; color: rgb(192, 192, 192);">이미 계정이 있으신가요?</h1>
-            <h1 style="white-space:nowrap; position:absolute; left:827px; top:697px;"><a href="{% url 'login' %}">여기 클릭</a></h1>
-            <div style="padding: 6px;"></div>
-            <div sytle="padding: 7px;"></div>
+            <h1 style="position:absolute; left:690px; top:682px; font-size: 12.5px; color: rgb(192, 192, 192);">이미 계정이 있으신가요?</h1>
+            <h1 style="white-space:nowrap; position:absolute; left:827px; top:682px;"><a href="{% url 'login' %}">여기 클릭</a></h1>
+            <div></div>
+            <div></div>
             {% if response %}
                 <h1 style="color: red"> {{response}} </h1>
             {% endif %}
