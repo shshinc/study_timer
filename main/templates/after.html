@@ -22,11 +22,7 @@
     <form action="end/" method="POST">
         {% csrf_token %}
         <input type="hidden" name="size" value='test'>
-        <!-- <input type="text" name="k"> -->
-    <button type="submit" id="webcamBtn">시작</button>
-    <button type="button" id="endBtn">끝</button>
-    <!-- <button type="submit" class="sub">dd</button> -->
-    </form>
+
     <script>
         var video = document.querySelector("#videoElement");
 
@@ -59,7 +55,7 @@
                data: {
                   datasets: [{
                      data: [
-                        50,50
+                        0,{{today_goal}}
                      ],
                      backgroundColor: [
                         "orange",
@@ -107,7 +103,7 @@
                 data: {
                     datasets: [{
                     data: [
-                        50,50
+                        0,{{week_goal}}
                     ],
                     backgroundColor: [
                         "orange",
@@ -211,19 +207,17 @@
     <div style="margin: 2%; margin-top: 0; margin-right:10%;float: left;">
         <p style="margin-top:0; margin-bottom: -10px;">순공시간</p>
         <h1 style="margin-top: 10px;"id="study_time" >
-            00:00:00
-            {{study_time}}
+            0:00:00
         </h1>
         <p style="margin-top:0; margin-bottom: -10px;">공부시간</p>
         <h1 style="margin-top: 10px;"id="stopwatch" >
-            00:00:00
+            0:00:00
         </h1>
         <div style="margin-top: -10px;text-align: right;">
-            <button class="myButton" onclick="startClock()">시작</button>
+            <button type="submit"class="myButton" onclick="startClock()">시작</button>
         </div>
     </div>
-    <script src="{%static 'main.js'%}"></script>
-
+</form>
     <div style="margin: 2%; margin-top: 0;float: left;">
     <p style="margin-top:0">목표시간</p>
     <h2>일일 목표량 {{today_goal}}시간</h2>
