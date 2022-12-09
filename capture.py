@@ -54,6 +54,8 @@ def get_study_time():
             if label == 'cell phone':
                 play_time = 30
     study_time -= play_time
+    study_time = str(datetime.timedelta(seconds=study_time, microseconds=0))
+    count += 1
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-    return
+    return study_time[:7]
