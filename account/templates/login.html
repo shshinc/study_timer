@@ -11,12 +11,12 @@
 </head>
 
 <style type="text/css" >
-    a:link{ color:rgb(255, 155, 47); text-decoration:none; }    /* 처음 방문링크 */
-    a:visited{ color:rgb(255, 155, 47);}    /* 방문한 링크 */
-    a:hover{ color: rgb(255, 77, 46); } /* 마우스 오버시 */ 
+    a:link{ font-size: 12.5px; color:rgb(255, 155, 47); text-decoration:none; }    /* 처음 방문링크 */
+    a:visited{ font-size: 12.5px; color:rgb(255, 155, 47);}    /* 방문한 링크 */
+    a:hover{ font-size: 12.5px; color: rgb(255, 77, 46); } /* 마우스 오버시 */ 
 </style>
 
-<body style = "margin-left:625px; margin-top:130px;">
+<body style = "margin-left:625px; margin-top:220px;">
     <form action={% url 'login' %} method="POST">
     {% csrf_token %}
         <div class="main">
@@ -29,18 +29,19 @@
             }</script>
             <div class="login">
                 <div class="login_id">
-                    <input name = "email" type="text" placeholder="아이디" id="id" class="account" onkeyup="enterkey()">
+                    <input name = "email" type="text" placeholder="아이디" id="email" class="account" onkeyup="enterkey()">
                 </div>
                 <div style="padding: 8px"></div>
                 <div class="login_pw">
                     <input name = "password" type="password" placeholder="비밀번호" id="password" class="account" onkeyup="enterkey()">
                 </div>
                 <div class="submit">
-                    <button id="login">로그인</button>
+                    <button id="login">
+                        <h1 style="font-size: 14px"> 로그인 </h1></button>
                 </div>
                 <div class="signup">
-                <label id="signup" style="color: rgb(192, 192, 192);">아직 계정이 없다면</label>
-                <a id="signup" href="{% url 'signup' %}">회원가입</a>
+                <label id="signup" style="color: rgb(192, 192, 192); font-size: 12.5px;">아직 계정이 없다면</label>
+                <h1 style="white-space:nowrap; position:absolute; left:808px; top:563px;"><a id="signup" href="{% url 'signup' %}">회원가입</a></h1>
                 </div>
                 <p id="alert" class="account"> </p>
                 <div style="padding: 8px"></div>
