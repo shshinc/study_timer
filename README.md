@@ -12,12 +12,15 @@
  - yolo와 roboflow의 설치는 google colab에서 진행하였습니다.
  - 모델 학습은 google colab에서 진행하였습니다.
 
-opencv
+model 설치
  ```
  pip install opencv-python
  pip install numpy
  pip install torch
  pip install tensorflow
+ pip install roboflow 
+ git clone https://github.com/ultralytics/yolov5.git
+ pip install -r requirements.txt
  ```
 웹 데이터 크롤링
  ```
@@ -27,15 +30,6 @@ opencv
 서버 설치
  ```
  pip install django
- ```
-roboflow
- ```
-pip install roboflow 
- ```
-yolov5
- ```
-git clone https://github.com/ultralytics/yolov5.git
-pip install -r requirements.txt
  ```
  
 ### 의존성
