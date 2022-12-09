@@ -41,6 +41,9 @@ def get_study_time():
     indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.5, 0.4)
 
     font = cv2.FONT_HERSHEY_PLAIN
+    for i in range(len(boxes)):
+        if i in indexes:
+            x, y, w, h = boxes[i]
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     return
