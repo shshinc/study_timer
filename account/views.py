@@ -54,7 +54,7 @@ def login(request):
         if signin_db.filter(email).exists():
             if signin_db.filter(password).exists():
                 auth.login(request, user)
-                return render(request, 'main/index.html')
+                return render(request, 'main')
             else:
                 response['error'] = '비밀번호를 확인해주세요'
                 return render(request, 'login.html', {'response': response['error']})
