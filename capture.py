@@ -10,6 +10,9 @@ def get_study_time():
     layer_names = net.getLayerNames()
     output_layers = [layer_names[i - 1] for i in net.getUnconnectedOutLayers()]
     colors = np.random.uniform(0, 255, size=(len(classes), 3))
+
+    study_time = 30
+    play_time = 0
     count = 1
     img = cv2.imread("C:/Users/ksk03/Downloads/image(" + str(count) + ").jpg")
     img = cv2.resize(img, None, fx=0.4, fy=0.4)
@@ -47,6 +50,8 @@ def get_study_time():
             label = str(classes[class_ids[i]])
             color = colors[i]
             cv2.rectangle(img, (x, y), (x + w, y + h), color, 2)
+            cv2.putText(img, label, (x, y + 30), font, 3, color, 3)
+
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     return
