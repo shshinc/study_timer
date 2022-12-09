@@ -11,4 +11,5 @@ def after(request):
 
 def image(request):
     size = request.POST.get('size')
-    return render(request, 'end.html', {'size':size})
+    doing_study = picture.get_study_time()
+    return render(request, 'end.html', {'size':size,  'study_time' : doing_study})
