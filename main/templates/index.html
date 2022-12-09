@@ -42,7 +42,7 @@
                data: {
                   datasets: [{
                      data: [
-                        50,50
+                        0,0
                      ],
                      backgroundColor: [
                         "orange",
@@ -90,7 +90,7 @@
                 data: {
                     datasets: [{
                     data: [
-                        50,50
+                        0,0
                     ],
                     backgroundColor: [
                         "orange",
@@ -195,7 +195,6 @@
         <p style="margin-top:0; margin-bottom: -10px;">순공시간</p>
         <h1 style="margin-top: 10px;"id="study_time" >
             00:00:00
-            {{study_time}}
         </h1>
         <p style="margin-top:0; margin-bottom: -10px;">공부시간</p>
         <h1 style="margin-top: 10px;"id="stopwatch" >
@@ -209,9 +208,7 @@
 
     <div style="margin: 2%; margin-top: 0;float: left;">
         <p style="margin-top:0">목표시간</p>
-
     {% block content %}
-
     <form action="after/" method="POST">
         {% csrf_token %}
         <div>
@@ -226,44 +223,8 @@
         <button type="submit" class="btn btn-primary">설정</button>
         </div>
     </form>
-
     </div>
- 
     {% endblock %}
-
-
-        {% csrf_token %}
-        <video id="video" width="320" height="240" autoplay></video>
-        <canvas id="canvas" width="960" height="720"></canvas>
-        <button type="button" id="webcamBtn">시작</button>
-        <button type="button" id="endBtn">끝</button>
-    
-    
-    <script>
-    if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-            var video = document.getElementById('video');
-            video.srcObject = stream;
-            video.play();
-        });
-    }
-    
-    var canvas = document.getElementById('canvas');
-    var context = canvas.getContext('2d');
-    var video = document.getElementById('video');
-    
-    //시작누르면 3초당 자동캡쳐
-    document.getElementById("webcamBtn").addEventListener("click",function() {
-        auto_capture = setInterval(function() {
-        context.drawImage(video,0,0,960,720);
-    }, 3000);
-    });
-
-    //끝누르면 중지
-    document.getElementById("endBtn").addEventListener("click",function() {
-        clearInterval(auto_capture)
-    });
-    </script>
 </div>
 </body>
 </html>
