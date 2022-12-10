@@ -73,6 +73,9 @@ for server
 python manage.py runserver
  ```
  
+ ![ezgif com-gif-maker](https://user-images.githubusercontent.com/49019187/206849937-56618a90-d061-40ae-b987-81c90016c7b4.gif)
+
+
 ### 사용 방법
 
 
