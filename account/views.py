@@ -33,6 +33,9 @@ def signup(request):
         if signup_db.filter(password = request.POST.get('password')).exists():
             response['error'] = '중복된 비밀번호입니다.'
             return render(request, 'signup.html', {'response': response['error']})
+        if password != re_password:
+            response['error'] = '비밀번호를 다시 확인하세요.'
+            return render(request, 'signup.html', {'response': response['error']})
         
         users = User(
             username = username,
