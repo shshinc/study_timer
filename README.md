@@ -58,6 +58,8 @@ for 웹 데이터 크롤링
 for server
  ```
  Django==4.1.4
+ django-bootstrap4==22.3
+ virtualenv==20.17.0
  ```
  
 ### 사용 데이터
