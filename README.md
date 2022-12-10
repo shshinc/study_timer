@@ -78,6 +78,8 @@ python manage.py runserver
 
 ### 사용 방법
 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/49019187/206850211-2fa6e5d4-d0da-4226-abad-e8ffc55032b2.gif)
+
 
 ### 라이선스
  ```
