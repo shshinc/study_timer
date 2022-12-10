@@ -62,6 +62,11 @@ for server
  virtualenv==20.17.0
  ```
  
+for web
+ ```
+node.js==18.9.0
+ ```
+
 ### 사용 데이터
 
 구글 이미지 크롤링을 통해 이미지 파일들을 받고 roboflow를 통하여 dataset을 구성하였다.
