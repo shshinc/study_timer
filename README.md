@@ -30,6 +30,7 @@ model 설치
 서버 설치
  ```
  pip install django
+ pip install django-bootstrap4
  ```
  
 ### 의존성
@@ -89,4 +90,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ### Autor
  - SuHwan-Shin, shshinc77@gmail.com, ChungBuk National Univ(Undergraduate).
  - Jinyoung-Yoo, 9incero@gmail.com, ChungBuk National Univ(Undergraduate).
- - miseo-Kim, oasiwm@gmail.com, ChungBuk National Univ(Undergraduate).
+ - Miseo-Kim, oasiwm@gmail.com, ChungBuk National Univ(Undergraduate).
