@@ -65,6 +65,8 @@ for server
 for web
  ```
 node.js==18.9.0
+Chart.js==2.4.0
+html2canvas==1.4.1 
  ```
 
 ### 사용 데이터
