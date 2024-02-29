@@ -102,6 +102,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
  ```
 ### Autor
- - SuHwan-Shin, shshinc77@gmail.com, ChungBuk National Univ(Undergraduate).
- - Jinyoung-Yoo, 9incero@gmail.com, ChungBuk National Univ(Undergraduate).
- - Miseo-Kim, oasiwm@gmail.com, ChungBuk National Univ(Undergraduate).
+ - SuHwan-Shin, shshinc77@gmail.com.
+ - Jinyoung-Yoo, 9incero@gmail.com.
+ - Miseo-Kim, oasiwm@gmail.com.
